@@ -6,7 +6,7 @@ if (!empty($_SESSION['current_user'])) {
         <h1><?= !empty($_GET['id']) ? ((!empty($_GET['task']) && $_GET['task'] == "copy") ? "Copy sản phẩm" : "Sửa sản phẩm") : "Thêm sản phẩm" ?></h1>
         <div id="content-box">
             <?php
-            if (isset($_GET['action']) && ($_GET['action'] == 'add' || $_GET['action'] == 'edit')) {
+            if (isset($_GET['action']) && ($_GET['action'] == 'add' || $_GET['action'] == 'edit')) {    
                 if (isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['price']) && !empty($_POST['price'])) {
                     $galleryImages = array();
                     if (empty($_POST['name'])) {
@@ -119,7 +119,7 @@ if (!empty($_SESSION['current_user'])) {
             <?php foreach ($product['gallery'] as $image) { ?>
                                         <li>
                                             <img src="../<?= $image['path'] ?>" />
-                                            <a href="gallery_delete.php?id=<?= $image['id'] ?>">Xóa</a>
+                                            <a href="gallery_delete?id=<?= $image['id'] ?>">Xóa</a>
                                         </li>
                                 <?php } ?>
                                 </ul>

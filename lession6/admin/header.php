@@ -17,6 +17,11 @@ and open the template in the editor.
         session_start();
         include '../../config/connect_db.php';
         include '../../function/function.php';
+        $regexResult = checkPrivilege(); //Kiểm tra quyền thành viên
+        if (!$regexResult) {
+            echo "Bạn không có quyền truy cập chức năng này";
+            exit;
+        }
         if (!empty($_SESSION['current_user'])) { //Kiểm tra xem đã đăng nhập chưa?
             ?>
             <div id="admin-heading-panel">
@@ -38,12 +43,22 @@ and open the template in the editor.
                         <div class="menu-heading">Admin Menu</div>
                         <div class="menu-items">
                             <ul>
-                                <li><a href="#">Cấu hình</a></li>
-                                <li><a href="menu_listing.php">Danh mục</a></li>
-                                <li><a href="#">Tin tức</a></li>
-                                <li><a href="product_listing.php">Sản phẩm</a></li>
-                                <li><a href="order_listing.php">Đơn hàng</a></li>
-                                <li><a href="member_listing.php">Quản lý thành viên</a></li>
+                                <li><a href="dashboard.php">Thông tin hệ thống</a></li>
+                                <?php if (checkPrivilege('menu_listing.php')) { ?>
+                                    <li><a href="menu_listing.php">Danh mục</a></li>
+                                <?php } ?>
+                                <?php if (checkPrivilege('news_listing.php')) { ?>
+                                    <li><a href="#">Tin tức</a></li>
+                                <?php } ?>
+                                <?php if (checkPrivilege('product_listing.php')) { ?>
+                                    <li><a href="product_listing.php">Sản phẩm</a></li>
+                                <?php } ?>
+                                <?php if (checkPrivilege('order_listing.php')) { ?>
+                                    <li><a href="order_listing.php">Đơn hàng</a></li>
+                                <?php } ?>
+                                <?php if (checkPrivilege('member_listing.php')) { ?>
+                                    <li><a href="member_listing.php">Quản lý thành viên</a></li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>

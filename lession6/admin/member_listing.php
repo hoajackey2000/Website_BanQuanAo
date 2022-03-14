@@ -89,7 +89,7 @@ if (!empty($_SESSION['current_user'])) {
 							<a href="./<?=$config_name?>_editing.php?id=<?= $row['id'] ?>">Sửa</a>
 						</div>
 						<div class="listing-prop listing-privilege">
-							<a href="./<?=$config_name?>_editing.php?id=<?= $row['id'] ?>&task=copy">Phân quyền</a>
+							<a href="./<?=$config_name?>_privilege.php?id=<?= $row['id'] ?>">Phân quyền</a>
 						</div>
 						<div class="listing-prop listing-time"><?= date('d/m/Y H:i', $row['created_time']) ?></div>
 						<div class="listing-prop listing-time"><?= date('d/m/Y H:i', $row['last_updated']) ?></div>

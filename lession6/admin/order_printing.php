@@ -13,7 +13,7 @@ and open the template in the editor.
         <script src="../resources/ckeditor/ckeditor.js"></script>
     </head>
     <body>
-    <?php
+        <?php
         session_start();
         if (!empty($_SESSION['current_user'])) {
             include '../../config/connect_db.php';

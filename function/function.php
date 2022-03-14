@@ -1,5 +1,19 @@
 <?php
 
+// check phân quyền
+function checkPrivilege($uri = false) {
+    $uri = $uri != false ? $uri : $_SERVER['REQUEST_URI'];
+    if(empty($_SESSION['current_user']['privileges'])){
+        return false;
+    }
+    $privileges = $_SESSION['current_user']['privileges'];
+    $privileges = implode("|", $privileges);
+    preg_match('/dashboard\.php$|' . $privileges . '/', $uri, $matches);
+    return !empty($matches);
+}
+
+
+
 // menu_delete
 function deleteChildrenMenu($parent_id,$menuList,$con){
     foreach($menuList as $item){

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Quản trị</title>
-    <link rel="stylesheet" href="../css/admin_style.css">
-</head>
-<body>
-<?php
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Trang Quản Trị</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/admin_style.css">
+    </head>
+    <body>
+        <?php
         session_start();
         include '../../config/connect_db.php';
         $error = false;
@@ -16,9 +20,18 @@
             $result = mysqli_query($con, "Select `id`,`username`,`fullname`,`birthday` from `user` WHERE (`username` ='" . $_POST['username'] . "' AND `password` = md5('" . $_POST['password'] . "'))");
             if (!$result) {
                 $error = mysqli_error($con);
-            } else {
+            }else {
                 $user = mysqli_fetch_assoc($result);
+                $userPrivileges = mysqli_query($con, "SELECT * FROM `user_privilege` INNER JOIN `privilege` ON user_privilege.privilege_id = privilege.id WHERE user_privilege.user_id = ".$user['id']);
+                $userPrivileges = mysqli_fetch_all($userPrivileges, MYSQLI_ASSOC);
+                if(!empty($userPrivileges)){
+                    $user['privileges'] = array();
+                    foreach($userPrivileges as $privilege){
+                        $user['privileges'][] = $privilege['url_match'];
+                    }
+                }
                 $_SESSION['current_user'] = $user;
+                header('Location: dashboard.php');
             }
             mysqli_close($con);
             if ($error !== false || $result->num_rows == 0) {
@@ -50,11 +63,8 @@
             $currentUser = $_SESSION['current_user'];
             ?>
             <div id="login-notify" class="box-content">
-                Xin chào <?= $currentUser['fullname'] ?><br/>
-                <a href="./product_listing.php">Quản lý sản phẩm</a><br/>
-                <a href="./edit.php">Đổi mật khẩu</a><br/>
-                <a href="./logout.php">Đăng xuất</a>
+
             </div>
         <?php } ?>
-</body>
+    </body>
 </html>

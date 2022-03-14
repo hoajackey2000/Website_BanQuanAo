@@ -86,9 +86,9 @@ if (!empty($_SESSION['current_user'])) {
                 </li>
                 <?php  } ?>
             </ul>
-            <?php 
-              include '../../function/pagination.php';
-              ?>
+            <?php /*
+              include './pagination.php';
+             */ ?>
             <div class="clear-both"></div>
         </div>
     </div>

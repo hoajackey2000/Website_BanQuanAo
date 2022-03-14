@@ -21,6 +21,7 @@ h1{
 .listing-items ul{
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 .listing-prop{
     float: right;
@@ -38,7 +39,6 @@ h1{
     padding: 5px;
     height: 80px;
 }
-
 .listing-fullname,
 .listing-username,
 .listing-name{
@@ -46,18 +46,19 @@ h1{
     border-right: 0;
     float: left;
     width: 170px;
-    overflow: hidden;
     max-height: 90px;
+    overflow: hidden;
 }
-
 .listing-fullname{
     width: 230px;
 }
-
+.listing-privilege{
+    width: 100px;
+    text-align: center;
+}
 .listing-username{
     width: 100px;
 }
-
 .listing-button{
     float: right;
     border-left: 1px solid #ccc;
@@ -286,7 +287,6 @@ a:hover{
 .listing-search{
     margin-bottom: 15px;
 }
-
 
 /* hiện số lượng sản phẩm và số trang */
 .total-items{
