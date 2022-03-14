@@ -23,7 +23,7 @@
     <div id="user-info">
         <h1>Danh sách tài khoản</h1>
         <a href="./create_user.php">Tạo tài khoản mới</a>
-        <table id= "user-listing" style="width: 700px; ">
+        <table id= "user-listing" style="width: 650px; ">
             <tr>
                 <td>Username</td>
                 <td>Trạng thái</td>
