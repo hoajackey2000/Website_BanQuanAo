@@ -19,7 +19,7 @@
                 $check = validateDateTime($birthday);
                 if ($check) {
                     $birthday = strtotime($birthday);
-                    $result = mysqli_query($con, "INSERT INTO `user` (`username`,`fullname`, `password`, `birthday`, `status`, `created_time`, `last_updated`) VALUES ('" . $_POST['fullname'] . "', '" . $_POST['username'] . "', MD5('" . $_POST['password'] . "'), '" . $birthday . "', 1, " . time() . ", '" . time() . "');");
+                    $result = mysqli_query($con, "INSERT INTO `user` (`username`,`fullname`, `password`, `birthday`,  `created_time`, `last_updated`) VALUES ('" . $_POST['fullname'] . "', '" . $_POST['username'] . "', MD5('" . $_POST['password'] . "'), '" . $birthday . "', " . time() . ", '" . time() . "');");
                     if (!$result) {
                         if (strpos(mysqli_error($con), "Duplicate entry") !== FALSE) {
                             $error = "Tài khoản đã tồn tại. Bạn vui lòng chọn tài khoản khác.";

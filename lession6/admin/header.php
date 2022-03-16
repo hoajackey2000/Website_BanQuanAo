@@ -34,6 +34,7 @@ and open the template in the editor.
                         <a href="../index.php">Trang chủ</a>
                         <img height="24" src="../images/logout.png" />
                         <a href="logout.php">Đăng xuất</a>
+                        <a href="register.php">Đăng Ký</a>
                     </div>
                 </div>
             </div>

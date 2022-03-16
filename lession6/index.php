@@ -30,6 +30,7 @@
     }
 
     include '../config/connect_db.php';
+    // include './login.php';
     $item_per_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 4;
         $current_page = !empty($_GET['page']) ? $_GET['page'] : 1; //Trang hiện tại
         $offset = ($current_page - 1) * $item_per_page;
@@ -59,6 +60,7 @@
                 <div style="clear: both;" ></div>
             </div>
             <div class="product-items">
+        
                 <?php
                 while ($row = mysqli_fetch_array($products)) {
                     ?>

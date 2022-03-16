@@ -7,9 +7,9 @@ if (!empty($_SESSION['current_user'])) {
         $_SESSION[$config_name.'_filter'] = $_POST;
         header('Location: '.$config_name.'_listing.php');exit;
     }
-    if(!empty($_SESSION[$config_name.'filter'])){
+    if(!empty($_SESSION[$config_name.'_filter'])){
         $where = "";
-        foreach ($_SESSION[$config_name.'filter'] as $field => $value) {
+        foreach ($_SESSION[$config_name.'_filter'] as $field => $value) {
             if(!empty($value)){
                 switch ($field) {
                     case 'name':
@@ -21,7 +21,7 @@ if (!empty($_SESSION['current_user'])) {
                 }
             }
         }
-        extract($_SESSION[$config_name.'filter']);
+        extract($_SESSION[$config_name.'_filter']);
     }
     $item_per_page = (!empty($_GET['per_page'])) ? $_GET['per_page'] : 10;
     $current_page = (!empty($_GET['page'])) ? $_GET['page'] : 1;
@@ -112,7 +112,7 @@ if (!empty($_SESSION['current_user'])) {
                 <?php } ?>
             </ul>
             <?php
-            include './pagination.php';
+            include '../../function/pagination.php';
             ?>
             <div class="clear-both"></div>
         </div>

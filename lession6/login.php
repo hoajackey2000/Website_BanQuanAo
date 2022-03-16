@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Bài 5: Đăng nhập với facebook và google</title>
+        <title>Đăng nhập với facebook và google</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
@@ -42,11 +42,12 @@ and open the template in the editor.
        <?php if (!empty($_SESSION['current_user'])) {
             $currentUser = $_SESSION['current_user'];
             ?>
-            <div id="login-notify" class="box-content">
+            
+            <!-- <div id="login-notify" class="box-content">
                 Xin chào <?= $currentUser['fullname'] ?><br/>
                 <a href="./edit.php">Đổi mật khẩu</a><br/>
                 <a href="./logout.php">Đăng xuất</a>
-            </div>
+            </div> -->
             <?php
         } else {
             include './facebook_source.php';
@@ -54,7 +55,7 @@ and open the template in the editor.
             ?>
             <div id="user_login" class="box-content">
                 <h1>Đăng nhập tài khoản</h1>
-                <form action="./login.php" method="Post" autocomplete="off">
+                <form action="./index.php" method="Post" autocomplete="off">
                     <label>Username</label></br>
                     <input type="text" name="username" value="" /><br/>
                     <label>Password</label></br>
