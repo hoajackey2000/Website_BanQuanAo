@@ -376,3 +376,61 @@ select[name="parent_id"]{
 #create_user form input, #delete_user form input, #edit_user form input{
    margin: 5px 0;
 }  
+
+
+/* order */
+
+.listing-prop-order.listing-time-order {
+    width: 150px;
+    text-align: center;
+}
+
+.listing-prop-order{
+    float: left;
+    border-left: 1px solid #ccc;
+    line-height: 90px;
+    padding: 0 10px;
+}
+
+.listing-prop-order{
+    line-height: 40px;
+}
+
+
+.listing-prop-order{
+    height: 40px;
+    line-height: 40px;
+    background: #717171;
+    color: #FFF;
+}
+
+.listing-button-order{
+    float: right;
+    border-left: 1px solid #ccc;
+    border-right: 0;
+    padding: 0 10px;
+    width: 50px;
+    text-align: center;
+}
+
+
+.listing-name-order, .listing-phone{
+    padding-left: 10px;
+    border-right: 0;
+    float: left;
+    width: 125px;
+    max-height: 90px;
+    overflow: hidden;
+}
+
+.listing-prop-order.listing-button {
+    float: right;
+    width: 50px;
+}
+
+.listing-id-order {
+    float: left;
+    width: 20px;
+    text-align: center;
+}
+
