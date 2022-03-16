@@ -22,24 +22,29 @@
                     <img src="./<?=$product['image']?>" />
                 </div>
                 <div id="product-info">
-                    <h1><?=$product['name']?></h1>
+                    <h1><?= $product['name'] ?></h1>
                     <label>Giá: </label><span class="product-price"><?= number_format($product['price'], 0, ",", ".") ?> VND</span><br/>
-                    <form id="add-to-cart-form" action="cart.php?action=add" method="POST">
-                        <input type="text" value="1" name="quantity[<?=$product['id']?>]" size="2" /><br/>
+                    <?php if ($product['quantity'] > 0) { ?>
+                        <div class="product-quantity"><label>Tồn kho: </label><strong><?= $product['quantity'] ?></strong></div>
+                        <form id="add-to-cart-form" action="cart.php?action=add" method="POST">
+                        <input type="text" value="1" name="quantity[<?= $product['id'] ?>]" size="2" /><br/>
                         <input type="submit" value="Mua sản phẩm" />
-                    </form>
-                    <?php if(!empty($product['images'])){ ?>
-                    <div id="gallery">
-                        <ul>
-                            <?php foreach($product['images'] as $img) { ?>
-                                <li><img src="./<?=$img['path']?>" /></li>
-                            <?php } ?>
-                        </ul>
-                    </div>
+                        </form>
+                    <?php } else { ?>
+                        <span class="error">Hết hàng</span>
+                    <?php } ?>
+                    <?php if (!empty($product['images'])) { ?>
+                        <div id="gallery">
+                            <ul>
+                                <?php foreach ($product['images'] as $img) { ?>
+                                    <li><img src="<?= $img['path'] ?>" /></li>
+                                <?php } ?>
+                            </ul>
+                        </div>
                     <?php } ?>
                 </div>
                 <div class="clear-both"></div>
-                <?=$product['content']?>
+                <?= $product['content'] ?>
                 <div class="buy-button">
                     <a href="./index.php">Quay Lại</a>
                 </div>

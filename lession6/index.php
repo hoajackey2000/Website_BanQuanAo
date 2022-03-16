@@ -64,7 +64,7 @@
                     ?>
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="detail.php?id=<?= $row['id'] ?>"><img src="./<?= $row['image'] ?>" title="<?= $row['name'] ?>" /></a>
+                            <a href="detail.php?id=<?= $row['id'] ?>"><img src="<?= $row['image'] ?>" title="<?= $row['name'] ?>" /></a>
                         </div>
 
                         <div id="product-info-index">

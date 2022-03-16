@@ -12,7 +12,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="../css/admin_style.css">
     </head>
     <body>
-        <?php
+    <?php
         session_start();
         include '../../config/connect_db.php';
         $error = false;
@@ -20,7 +20,7 @@ and open the template in the editor.
             $result = mysqli_query($con, "Select `id`,`username`,`fullname`,`birthday` from `user` WHERE (`username` ='" . $_POST['username'] . "' AND `password` = md5('" . $_POST['password'] . "'))");
             if (!$result) {
                 $error = mysqli_error($con);
-            }else {
+            } else {
                 $user = mysqli_fetch_assoc($result);
                 $userPrivileges = mysqli_query($con, "SELECT * FROM `user_privilege` INNER JOIN `privilege` ON user_privilege.privilege_id = privilege.id WHERE user_privilege.user_id = ".$user['id']);
                 $userPrivileges = mysqli_fetch_all($userPrivileges, MYSQLI_ASSOC);

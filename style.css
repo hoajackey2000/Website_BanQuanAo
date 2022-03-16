@@ -311,11 +311,20 @@ input[name="order_click"]{
     border-radius: 5px;
 }
 
+/* Tồn kho */
+.product-quantity{
+    margin-top: 10px;
+}
+.error{
+    margin-top: 10px;
+    display: block;
+    color: #000;
+    font-weight: bold;
+    font-size: 25px;
+}
+
 
 /* sắp xếp theo giá */
-
-
-
 .page-item{
     border: 1px solid #ccc;
     padding: 5px 9px;
