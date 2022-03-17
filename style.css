@@ -65,11 +65,13 @@ body{
 }
 h1{
     text-align: center;
+    margin: 10px;
 }
 .product-items{
     border: 1px solid #ccc;
     padding: 30px;
     text-align: center;
+    border-radius: 5px;
 }
 .product-item{
     float: left;
@@ -81,6 +83,7 @@ h1{
     line-height: 26px;
     max-height: 400px;
     overflow: hidden;
+    border-radius: 5px;
 }
 .product-item label{
     font-weight: bold;
@@ -334,11 +337,13 @@ input[name="order_click"]{
 
 #wrapper-product{
     border: 1px solid #ccc;
+    margin-top: 10px;
+    border-radius: 20px;
 }
 #product-search{
     margin: 0 40px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
     float: left;
 }
 #sort-box{
@@ -346,4 +351,67 @@ input[name="order_click"]{
     margin-right: 45px;
     line-height: 24px;
     height: 24px;
+}
+
+/* đăng xuất / đăng ký */
+
+#admin-heading-panel{
+    background: #717171;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 5px;
+}
+#admin-heading-panel a{
+    color: #fff;
+}
+.left-panel{
+    float: left;
+}
+.left-panel span{
+    color: #eeff09;
+    font-weight: bold;
+}
+.right-panel{
+    float: right;
+}
+.right-panel img{
+    vertical-align: middle;
+}
+.right-panel a{
+    margin-right: 10px;
+}
+.left-menu{
+    float: left;
+    width: 280px;
+}
+.main-content{
+    float: left;
+    width: 900px;
+    margin-left: 20px;
+}
+.main-content h1{
+    margin: 0;
+    text-align: left;
+    background: #525151;
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 40px;
+    border-radius: 10px 10px 0 0;
+    padding: 0 10px;
+}
+
+#content-wrapper .container{
+    padding: 15px 0;
+}
+
+.container-index{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.left-panel span {
+    color: #eeff09;
+    font-weight: bold;
 }

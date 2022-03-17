@@ -15,6 +15,30 @@ and open the template in the editor.
     <body>
     <?php
         session_start();
+        $error = false;
+            if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])) {
+                $result = mysqli_query($con, "Select `id`,`username`,`fullname`,`birthday` from `user` WHERE (`username` ='" . $_POST['username'] . "' AND `password` = md5('" . $_POST['password'] . "'))");
+                if (!$result) {
+                    $error = mysqli_error($con);
+                } else {
+                    $user = mysqli_fetch_assoc($result);
+                    $_SESSION['current_user'] = $user;
+                }
+                mysqli_close($con);
+                if ($error !== false || $result->num_rows == 0) {
+                    ?>
+                    <div id="login-notify" class="box-content">
+                        <h1>Thông báo</h1>
+                        <h4><?= !empty($error) ? $error : "Thông tin đăng nhập không chính xác" ?></h4>
+                        <a href="./login.php">Quay lại</a>
+                    </div>
+                    <?php
+                    exit;
+                }
+                ?>
+            <?php } 
+            
+            
         include '../../config/connect_db.php';
         include '../../function/function.php';
         $regexResult = checkPrivilege(); //Kiểm tra quyền thành viên
@@ -24,24 +48,32 @@ and open the template in the editor.
         }
         if (!empty($_SESSION['current_user'])) { //Kiểm tra xem đã đăng nhập chưa?
             ?>
+            <?php if (!empty($_SESSION['current_user'])) {
+            $currentUser = $_SESSION['current_user'];
+            ?>
             <div id="admin-heading-panel">
-                <div class="container">
-                    <div class="left-panel">
-                        Xin chào <span>Admin</span>
-                    </div>
                     <div class="right-panel">
-                        <img height="24" src="../images/home.png" />
+                        <img height="24" src="../images/home.png">
                         <a href="../index.php">Trang chủ</a>
-                        <img height="24" src="../images/logout.png" />
+                        <img height="24" src="../images/logout.png">
                         <a href="logout.php">Đăng xuất</a>
                         <a href="register.php">Đăng Ký</a>
                     </div>
+
+                    <div id="container" class="left-panel">
+                    Xin chào <span> <?= $currentUser['fullname'] ?></span><br/>                        
+                    </div>
                 </div>
             </div>
+            <?php
+        
+
+
+        }  ?>
             <div id="content-wrapper">
                 <div class="container">
                     <div class="left-menu">
-                        <div class="menu-heading">Admin Menu</div>
+                        <div class="menu-heading">Menu</div>
                         <div class="menu-items">
                             <ul>
                                 <li><a href="dashboard.php">Thông tin hệ thống</a></li>

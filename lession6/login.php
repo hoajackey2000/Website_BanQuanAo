@@ -43,11 +43,11 @@ and open the template in the editor.
             $currentUser = $_SESSION['current_user'];
             ?>
             
-            <!-- <div id="login-notify" class="box-content">
+            <div id="login-notify" class="box-content">
                 Xin chào <?= $currentUser['fullname'] ?><br/>
                 <a href="./edit.php">Đổi mật khẩu</a><br/>
                 <a href="./logout.php">Đăng xuất</a>
-            </div> -->
+            </div>
             <?php
         } else {
             include './facebook_source.php';

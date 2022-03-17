@@ -9,6 +9,29 @@
 </head>
 <body>
 <?php
+    session_start();
+    $error = false;
+        if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])) {
+            $result = mysqli_query($con, "Select `id`,`username`,`fullname`,`birthday` from `user` WHERE (`username` ='" . $_POST['username'] . "' AND `password` = md5('" . $_POST['password'] . "'))");
+            if (!$result) {
+                $error = mysqli_error($con);
+            } else {
+                $user = mysqli_fetch_assoc($result);
+                $_SESSION['current_user'] = $user;
+            }
+            mysqli_close($con);
+            if ($error !== false || $result->num_rows == 0) {
+                ?>
+                <div id="login-notify" class="box-content">
+                    <h1>Thông báo</h1>
+                    <h4><?= !empty($error) ? $error : "Thông tin đăng nhập không chính xác" ?></h4>
+                    <a href="./login.php">Quay lại</a>
+                </div>
+                <?php
+                exit;
+            }
+            ?>
+        <?php } 
     $param = "";
     $sortParam = "";
     $orderConditon = "";
@@ -30,7 +53,6 @@
     }
 
     include '../config/connect_db.php';
-    // include './login.php';
     $item_per_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 4;
         $current_page = !empty($_GET['page']) ? $_GET['page'] : 1; //Trang hiện tại
         $offset = ($current_page - 1) * $item_per_page;
@@ -44,6 +66,33 @@
         $totalRecords = $totalRecords->num_rows;
         $totalPages = ceil($totalRecords / $item_per_page);
         ?>
+
+
+        <?php if (!empty($_SESSION['current_user'])) {
+            $currentUser = $_SESSION['current_user'];
+            ?>
+            <div id="admin-heading-panel">
+                    <div class="right-panel">
+                        <img height="24" src="./images/home.png">
+                        <a href="index.php">Trang chủ</a>
+                        <img height="24" src="./images/logout.png">
+                        <a href="./logout.php">Đăng xuất</a>
+                        <a href="./register.php">Đăng Ký</a>
+                    </div>
+
+                    <div id="container-index" class="left-panel">
+                    Xin chào <span> <?= $currentUser['fullname'] ?></span><br/>                        
+                    </div>
+                </div>
+            </div>
+            <?php
+        
+
+
+        }  ?>
+
+            
+
         <div id="wrapper-product" class="container">
             <h1>Danh sách sản phẩm</h1>
             <div id="filter-box">
