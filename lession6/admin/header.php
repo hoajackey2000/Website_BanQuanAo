@@ -6,17 +6,19 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Trang Quản Trị</title>
+        <title>Bài 31: Hướng dẫn xây dựng chức năng kiểm tra tồn kho cho giỏ hàng</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/admin_style.css" >
         <script src="../resources/ckeditor/ckeditor.js"></script>
     </head>
     <body>
-    <?php
+        <?php
         session_start();
-        $error = false;
-            if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])) {
+
+
+
+        if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])) {
                 $result = mysqli_query($con, "Select `id`,`username`,`fullname`,`birthday` from `user` WHERE (`username` ='" . $_POST['username'] . "' AND `password` = md5('" . $_POST['password'] . "'))");
                 if (!$result) {
                     $error = mysqli_error($con);
@@ -29,16 +31,19 @@ and open the template in the editor.
                     ?>
                     <div id="login-notify" class="box-content">
                         <h1>Thông báo</h1>
-                        <h4><?= !empty($error) ? $error : "Thông tin đăng nhập không chính xác" ?></h4>
-                        <a href="./login.php">Quay lại</a>
+                        <h4><?= !empty($error) ? $error : "Thông tin dang nh?p không chính xác" ?></h4>
+                        <a href="./login.php">Quay l?i</a>
                     </div>
                     <?php
                     exit;
                 }
                 ?>
             <?php } 
-            
-            
+
+
+    $param = "";
+    $sortParam = "";
+    $orderConditon = "";
         include '../../config/connect_db.php';
         include '../../function/function.php';
         $regexResult = checkPrivilege(); //Kiểm tra quyền thành viên
@@ -46,6 +51,7 @@ and open the template in the editor.
             echo "Bạn không có quyền truy cập chức năng này";
             exit;
         }
+        
         if (!empty($_SESSION['current_user'])) { //Kiểm tra xem đã đăng nhập chưa?
             ?>
             <?php if (!empty($_SESSION['current_user'])) {
@@ -56,8 +62,8 @@ and open the template in the editor.
                         <img height="24" src="../images/home.png">
                         <a href="../index.php">Trang chủ</a>
                         <img height="24" src="../images/logout.png">
-                        <a href="logout.php">Đăng xuất</a>
-                        <a href="register.php">Đăng Ký</a>
+                        <a href="logout.php">Ðăng Xuất</a>
+                        <a href="register.php">Ðăng Ký</a>
                     </div>
 
                     <div id="container" class="left-panel">
@@ -65,15 +71,17 @@ and open the template in the editor.
                     </div>
                 </div>
             </div>
+
             <?php
         
 
 
-        }  ?>
+    }  ?>
+    
             <div id="content-wrapper">
                 <div class="container">
                     <div class="left-menu">
-                        <div class="menu-heading">Menu</div>
+                        <div class="menu-heading">Admin Menu</div>
                         <div class="menu-items">
                             <ul>
                                 <li><a href="dashboard.php">Thông tin hệ thống</a></li>

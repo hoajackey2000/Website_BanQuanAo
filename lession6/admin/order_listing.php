@@ -18,6 +18,13 @@ if (!empty($_SESSION['current_user'])) {
                     default:
                     $where .= (!empty($where))? " AND "."`".$field."` = ".$value."": "`".$field."` = ".$value."";
                     break;
+
+                    case 'phone':
+                    $where .= (!empty($where))? " AND "."`".$field."` LIKE '%".$value."%'" : "`".$field."` LIKE '%".$value."%'";
+                    break;
+                    // default:
+                    $where .= (!empty($where))? " AND "."`".$field."` = ".$value."": "`".$field."` = ".$value."";
+                    break;
                 }
             }
         }
@@ -54,6 +61,8 @@ if (!empty($_SESSION['current_user'])) {
                         <legend>Tìm kiếm <?=$config_title?>:</legend>
                         ID: <input type="text" name="id" value="<?=!empty($id)?$id:""?>" />
                         Tên Người Nhận: <input type="text" name="name" value="<?=!empty($name)?$name:""?>" />
+                        <!-- <input type="submit" value="Tìm" /> -->
+                        Số điện thoại: <input type="text" name="phone" value="<?=!empty($phone)?$phone:""?>" />
                         <input type="submit" value="Tìm" />
                     </fieldset>
                 </form>

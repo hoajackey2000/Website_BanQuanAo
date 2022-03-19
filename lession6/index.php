@@ -10,27 +10,38 @@
 <body>
 <?php
     session_start();
+
+    include '../config/connect_db.php';
     $error = false;
-        if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])) {
-            $result = mysqli_query($con, "Select `id`,`username`,`fullname`,`birthday` from `user` WHERE (`username` ='" . $_POST['username'] . "' AND `password` = md5('" . $_POST['password'] . "'))");
-            if (!$result) {
-                $error = mysqli_error($con);
-            } else {
-                $user = mysqli_fetch_assoc($result);
-                $_SESSION['current_user'] = $user;
+    if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])) {
+        $result = mysqli_query($con, "Select `id`,`username`,`email`,`fullname`,`birthday` from `user` WHERE (`username` ='" . $_POST['username'] . "' AND `password` = md5('" . $_POST['password'] . "'))");
+        if (!$result) {
+            $error = mysqli_error($con);
+        } else {
+            $user = mysqli_fetch_assoc($result);
+            $userPrivileges = mysqli_query($con, "SELECT * FROM `user_privilege` INNER JOIN `privilege` ON user_privilege.privilege_id = privilege.id WHERE user_privilege.user_id = ".$user['id']);
+            $userPrivileges = mysqli_fetch_all($userPrivileges, MYSQLI_ASSOC);
+            if(!empty($userPrivileges)){
+                $user['privileges'] = array();
+                foreach($userPrivileges as $privilege){
+                    $user['privileges'][] = $privilege['url_match'];
+                }
             }
-            mysqli_close($con);
-            if ($error !== false || $result->num_rows == 0) {
-                ?>
-                <div id="login-notify" class="box-content">
-                    <h1>Thông báo</h1>
-                    <h4><?= !empty($error) ? $error : "Thông tin đăng nhập không chính xác" ?></h4>
-                    <a href="./login.php">Quay lại</a>
-                </div>
-                <?php
-                exit;
-            }
+            $_SESSION['current_user'] = $user;
+            // header('Location: dashboard.php');
+        }
+        mysqli_close($con);
+        if ($error !== false || $result->num_rows == 0) {
             ?>
+            <div id="login-notify" class="box-content">
+                <h1>Thông báo</h1>
+                <h4><?= !empty($error) ? $error : "Thông tin đăng nhập không chính xác" ?></h4>
+                <a href="./login.php">Quay lại</a>
+            </div>
+            <?php
+            exit;
+        }
+        ?>
         <?php } 
     $param = "";
     $sortParam = "";
@@ -115,7 +126,7 @@
                     ?>
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="detail.php?id=<?= $row['id'] ?>"><img src="<?= $row['image'] ?>" title="<?= $row['name'] ?>" /></a>
+                            <a href="detail.php?id=<?= $row['id'] ?>"><img src="./<?= $row['image'] ?>" title="<?= $row['name'] ?>" /></a>
                         </div>
 
                         <div id="product-info-index">

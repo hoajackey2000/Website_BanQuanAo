@@ -13,11 +13,11 @@ if (!empty($_SESSION['current_user'])) {
             if(!empty($value)){
                 switch ($field) {
                     case 'name':
-                    $where .= (!empty($where))? " AND "."`".$field."` LIKE '%".$value."%'" : "`".$field."` LIKE '%".$value."%'";
-                    break;
+                        $where .= (!empty($where))? " AND "."`".$field."` LIKE '%".$value."%'" : "`".$field."` LIKE '%".$value."%'";
+                        break;
                     default:
-                    $where .= (!empty($where))? " AND "."`".$field."` = ".$value."": "`".$field."` = ".$value."";
-                    break;
+                        $where .= (!empty($where))? " AND "."`".$field."` = ".$value."": "`".$field."` = ".$value."";
+                        break;
                 }
             }
         }

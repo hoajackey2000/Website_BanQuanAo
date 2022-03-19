@@ -63,15 +63,21 @@ if (!empty($_SESSION['current_user'])) {
             <ul id="<?= $config_name ?>-list">
                 <li class="listing-item-heading">
                     <div class="listing-prop listing-name"  style="width:301px;">Tên <?= $config_title ?></div>
+                    <?php if (checkPrivilege($config_name.'_delete.php?id=0')) { ?>
                     <div class="listing-prop listing-button">
                         Xóa
                     </div>
+                    <?php } ?>
+                    <?php if (checkPrivilege($config_name.'_editing.php?id=0')) { ?>
                     <div class="listing-prop listing-button">
                         Sửa
                     </div>
+                    <?php } ?>
+                    <?php if (checkPrivilege($config_name.'_editing.php?id=0&task=copy')) { ?>
                     <div class="listing-prop listing-button">
                         Copy
                     </div>
+                    <?php } ?>
                     <div class="listing-prop listing-time">Ngày tạo</div>
                     <div class="listing-prop listing-time">Ngày cập nhật</div>
                     <div class="clear-both"></div>

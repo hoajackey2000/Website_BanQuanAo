@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đổi Thông Tin</title>
-</head>
-<body>
-<?php
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Đổi thông tin thành viên</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/admin_style.css">
+    </head>
+    <body>
+        <?php
         include '../../config/connect_db.php';
         $error = false;
         if (isset($_GET['action']) && $_GET['action'] == 'edit') {
@@ -64,5 +69,5 @@
             }
         }
         ?>
-</body>
+    </body>
 </html>

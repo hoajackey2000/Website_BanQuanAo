@@ -1,6 +1,6 @@
 <?php
 
-// check phân quyền
+//check phân quyền
 function checkPrivilege($uri = false) {
     $uri = $uri != false ? $uri : $_SERVER['REQUEST_URI'];
     if(empty($_SESSION['current_user']['privileges'])){
@@ -200,7 +200,7 @@ function loginFromSocialCallBack($socialUser) {
             session_start();
         }
         $_SESSION['current_user'] = $user;
-        header('Location: ./login.php');
+        header('Location: ./index.php');
     }
 }
 

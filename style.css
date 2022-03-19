@@ -367,6 +367,7 @@ input[name="order_click"]{
 }
 .left-panel{
     float: left;
+    margin-left: 20px;
 }
 .left-panel span{
     color: #eeff09;

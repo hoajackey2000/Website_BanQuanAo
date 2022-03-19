@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "db_banquanao";
+$database = "connect_db";
 $con = mysqli_connect($host, $user, $password, $database);
 if (mysqli_connect_error()) {
     echo "Connection Fail: " . mysqli_connect_error();

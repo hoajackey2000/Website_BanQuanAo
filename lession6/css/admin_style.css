@@ -122,6 +122,7 @@ a:hover{
 }
 .left-panel{
     float: left;
+    margin-left: 20px;
 }
 .left-panel span{
     color: #eeff09;
@@ -134,7 +135,7 @@ a:hover{
     vertical-align: middle;
 }
 .right-panel a{
-    margin-right: 10px;
+    margin-right: 20px;
 }
 .left-menu{
     float: left;
@@ -434,3 +435,17 @@ select[name="parent_id"]{
     text-align: center;
 }
 
+
+/* phân quyên không thể truy cập quyền */
+
+h3{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.logout_admin_phan_quyen a{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
