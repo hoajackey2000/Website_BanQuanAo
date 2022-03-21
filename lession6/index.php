@@ -46,6 +46,7 @@
     $param = "";
     $sortParam = "";
     $orderConditon = "";
+    $error = false;
     //Tìm kiếm
     $search = isset($_GET['name']) ? $_GET['name'] : "";
     if ($search) {
@@ -53,7 +54,7 @@
         $param .= "name=".$search."&";
         $sortParam =  "name=".$search."&";
     }
-
+    
     //Sắp xếp
     $orderField = isset($_GET['field']) ? $_GET['field'] : "";
     $orderSort = isset($_GET['sort']) ? $_GET['sort'] : "";
@@ -64,7 +65,8 @@
     }
 
     include '../config/connect_db.php';
-    $item_per_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 4;
+    $item_per_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 4; 
+    // kiểm tra xem có !empty($_GET['per_page']), nếu đúng thì thực hiện sau dấu ? và ngược lại thực hiện sau dấu :
         $current_page = !empty($_GET['page']) ? $_GET['page'] : 1; //Trang hiện tại
         $offset = ($current_page - 1) * $item_per_page;
         if ($search) {
@@ -100,9 +102,7 @@
         
 
 
-        }  ?>
-
-            
+        }  ?> 
 
         <div id="wrapper-product" class="container">
             <h1>Danh sách sản phẩm</h1>

@@ -5,7 +5,7 @@
     <div id="admin-footer">
         <div class="container">
             <div class="left-panel">
-                © Copyright 2019 - Andn Php Training
+                © Copyright 2019 - PHP
             </div>
             <div class="right-panel">
                 <a target="_blank" href="https://www.facebook.com/andn.training/" title="Facebook Andn Training"><img height="48" src="../images/iconfacebook.png" /></a>
