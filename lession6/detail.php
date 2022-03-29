@@ -37,7 +37,7 @@
                         <div id="gallery">
                             <ul>
                                 <?php foreach ($product['images'] as $img) { ?>
-                                    <li><img src="<?= $img['path'] ?>" /></li>
+                                    <li><img src="./<?= $img['path'] ?>" /></li>
                                 <?php } ?>
                             </ul>
                         </div>

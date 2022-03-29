@@ -1,10 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>Giỏ Hàng</title>
@@ -31,7 +27,7 @@ and open the template in the editor.
                         if (!isset($_SESSION["cart"][$id])) {
                             $_SESSION["cart"][$id] = 0;
                         }
-                        var_dump($_SESSION["cart"][$id]);
+                        // var_dump($_SESSION["cart"][$id]);
                         if ($add) {
                             $_SESSION["cart"][$id] += $quantity;
                         } else {
@@ -153,7 +149,7 @@ and open the template in the editor.
                                     <tr>
                                         <td class="product-number"><?= $num++; ?></td>
                                         <td class="product-name"><?= $row['name'] ?></td>
-                                        <td class="product-img"><img src="<?= $row['image'] ?>" /></td>
+                                        <td class="product-img"><img src="./<?= $row['image'] ?>" /></td>
                                         <td class="product-price"><?= number_format($row['price'], 0, ",", ".") ?></td>
                                         <td class="product-quantity"><input type="text" value="<?= $_SESSION["cart"][$row['id']] ?>" name="quantity[<?= $row['id'] ?>]" /></td>
                                         <td class="total-money"><?= number_format($row['price'] * $_SESSION["cart"][$row['id']], 0, ",", ".") ?></td>

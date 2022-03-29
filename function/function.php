@@ -13,7 +13,6 @@ function checkPrivilege($uri = false) {
 }
 
 
-
 // menu_delete
 function deleteChildrenMenu($parent_id,$menuList,$con){
     foreach($menuList as $item){

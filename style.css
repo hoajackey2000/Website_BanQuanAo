@@ -153,6 +153,7 @@ a{
 .current-page{
     background: #000;
     color: #FFF;
+    border-radius: 5px
 }
 
 
@@ -186,8 +187,8 @@ a{
     border: 1px solid #000;
     background: #eee;
 }
-h2{
-
+h2, h3{
+    text-align: center;
     margin-top: 0;
 }
 label.add-to-cart {
@@ -231,7 +232,7 @@ label a{
 }
 
 
-/*  */
+/* bản đơn hàng */
 table{
     border-collapse: collapse;
     width: 1170px;
@@ -289,6 +290,7 @@ table .total-money{
     line-height: 30px;
     height: 30px;
 }
+
 input[name="order_click"]{
     margin-top: 15px;
 }
@@ -416,3 +418,7 @@ input[name="order_click"]{
     color: #eeff09;
     font-weight: bold;
 }
+
+
+
+

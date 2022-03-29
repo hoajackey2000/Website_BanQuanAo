@@ -6,7 +6,7 @@
     $error = false;
     if (isset($_GET['id']) && !empty($_GET['id'])) {
         include '../../config/connect_db.php';
-        $result = mysqli_query($con, "DELETE FROM `image_library` WHERE `id` = ".$_GET['id']);
+        $result = mysqli_query($con, "DELETE FROM `image_library` WHERE `id` = ('" . $_GET['id'] . "')");
         if (!$result) {
             $error = "Không thể xóa ảnh trong thư viện.";
         }

@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Bài 31: Hướng dẫn xây dựng chức năng kiểm tra tồn kho cho giỏ hàng</title>
+        <title>Trang Quản Trị</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/admin_style.css" >
@@ -22,21 +22,22 @@ and open the template in the editor.
                 $result = mysqli_query($con, "Select `id`,`username`,`fullname`,`birthday` from `user` WHERE (`username` ='" . $_POST['username'] . "' AND `password` = md5('" . $_POST['password'] . "'))");
                 if (!$result) {
                     $error = mysqli_error($con);
-                } else {
-                    $user = mysqli_fetch_assoc($result);
-                    $_SESSION['current_user'] = $user;
                 }
-                mysqli_close($con);
                 if ($error !== false || $result->num_rows == 0) {
                     ?>
                     <div id="login-notify" class="box-content">
                         <h1>Thông báo</h1>
-                        <h4><?= !empty($error) ? $error : "Thông tin dang nh?p không chính xác" ?></h4>
-                        <a href="./login.php">Quay l?i</a>
+                        <h4><?= !empty($error) ? $error : "Thông tin đăng nhập không chính xác" ?></h4>
+                        <a href="./login.php">Quay lại</a>
                     </div>
                     <?php
                     exit;
+                }else {
+                    $user = mysqli_fetch_assoc($result);
+                    $_SESSION['current_user'] = $user;
                 }
+                mysqli_close($con);
+                
                 ?>
             <?php } 
 
@@ -73,9 +74,6 @@ and open the template in the editor.
             </div>
 
             <?php
-        
-
-
     }  ?>
     
             <div id="content-wrapper">
