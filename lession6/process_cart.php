@@ -6,8 +6,8 @@ switch ($_GET['action']) {
         $result = update_cart(true);
         echo json_encode(array(
             'status'=>$result,
-            'message'=>"Thêm sản phẩm thành công"
-        ));
+            'message'=>"Thêm sản phẩm thành công",
+        )); 
         break;
     default:
         break;

@@ -107,7 +107,7 @@ and open the template in the editor.
                 }
                 ?>
                 <!-- <tr id="row-total"> -->
-                     <td class="product-quantity"><?= $total, " " ?></td>
+                     <td class="product-quantity"><?= $total, "" ?></td>
                      
                 <!-- </tr> -->
                 <?php

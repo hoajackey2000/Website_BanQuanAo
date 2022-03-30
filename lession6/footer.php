@@ -39,7 +39,7 @@
                     alert(response.message);
                 } else { //Mua thành công
                     alert(response.message);
-                    //location.reload();
+                    location.reload(); //load lại trang
                 }
             }
         });
