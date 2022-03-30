@@ -57,6 +57,14 @@ header{
     margin: 0 15px;
     text-decoration: underline;
 }
+
+#login-link:hover{
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0.9;
+    color: #8cc84c;
+}
+
 _#register-link{
     font-family: 'Conv_Roboto-Bold';
     background: #ed2c22;
@@ -106,6 +114,13 @@ _#register-link{
     color: #444444;
     font-size: 24px;
 }
+#menu ul li a:hover{
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0.9;
+    color: #8cc84c;
+}
+
 #menu ul li.clear-both{
     float: none;
 }
@@ -302,6 +317,13 @@ _#register-link{
     color: #626162;
     margin-right: 30px;
 }
+.heading-title a:hover{
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0.9;
+    color: red;
+}
+
 .heading-title{
     line-height: 40px;
 }
@@ -310,14 +332,14 @@ _#register-link{
 }
 #hot-products .product-item{
     border: 1px solid #ededed;
-    border-radius: 4px;
+    border-radius: 5px;
     float: left;
     width: 24%;
     box-sizing: border-box;
     margin-left: 1%;
     margin-bottom: 1%;
     text-align: center;
-    height: 360px;
+    height: 400px;
     padding: 10px 0;
 }
 #hot-products .product-item:hover{
@@ -348,9 +370,10 @@ _#register-link{
     float: none;
 }
 .product-item .product-image img{
-    /* max-width: 100%; */
-    max-width: 80%;
+    max-width: 100%;
     border-bottom: 1px solid #e1e0df;
+    border-radius: 10px;
+    border: none;
 }
 #hot-products .product-item .product-name{
     height: 40px;
@@ -573,4 +596,5 @@ input[name="order_click"]{
 
 select#sort-box {
     margin-left: 20px;
+    cursor: pointer;
 }

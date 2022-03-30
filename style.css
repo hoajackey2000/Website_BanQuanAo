@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100;1,200&display=swap');
 
 table, th, td{
     border: 1px solid black;
@@ -55,13 +56,16 @@ table, th, td{
 
 /* CSS Trang index.php Người Dùng */
 body{
-    font-family: arial;
+    /* font-family: arial; */
+    font-family: "Font Awesome 5 Free";
+
 }
 .container{
-    width: 1200px;
+    width: 1240px;
     margin: 0 auto;
-    border: 1px solid #000;
+    border: 5px solid red;
     padding: 15px;
+    border-radius: 10px;
 }
 h1{
     text-align: center;
@@ -143,8 +147,17 @@ a{
     background: #444;
     padding: 5px;
     color: #fff;
-    border-radius: 10xp;
+    border-radius: 5px;
 }
+.buy-button a:hover{
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0.9;
+    color: #f4f4f4 !important;
+    background-color: #8cc84c;
+}
+
+
 #pagination{
     text-align: right;
     margin-top: 15px;
@@ -168,6 +181,7 @@ a{
 #product-img{
     width: 30%;
     float: left;
+    padding-top: 50px;
 }
 #product-info{
     float: right;
@@ -186,6 +200,7 @@ a{
     padding: 5px;
     border: 1px solid #000;
     background: #eee;
+    border-radius: 10px;
 }
 h2, h3{
     text-align: center;
@@ -221,6 +236,7 @@ label a{
     padding: 5px;
     border: 1px solid #000;
     background: #eee;
+    border-radius: 10px;
 }
 #gallery ul li img{
     max-width: 100%;
@@ -300,7 +316,8 @@ input[name="order_click"]{
 }
 
 #add-to-cart-form input[type='text']{
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    margin: -1px 5px;
     height: 25px;
     line-height: 25px;
     border-radius: 5px;
@@ -314,7 +331,17 @@ input[name="order_click"]{
     display: inline-block;
     color: #fff;
     border-radius: 5px;
+    cursor: pointer;
 }
+
+#add-to-cart-form input[type='submit']:hover{
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0.9;
+    color: #f4f4f4 !important;
+    background-color: #8cc84c;
+}
+
 
 /* Tồn kho */
 .product-quantity{
@@ -418,6 +445,34 @@ input[name="order_click"]{
     color: #eeff09;
     font-weight: bold;
 }
+
+/* detail */
+.btn-primary {
+    color: #fff;
+    background-color: #ff6a00;
+    border-color: #ff6a00;
+}
+
+.total-quantity {
+    display: flex;
+    margin: 10px 0;
+}
+
+.total-quantity button{
+   font-size: 16px;
+   font-weight: bold;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+.total-quantity button:hover{
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0.9;
+    color: #f4f4f4 !important;
+    background-color: #8cc84c;
+}
+
 
 
 

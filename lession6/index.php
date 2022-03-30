@@ -26,26 +26,7 @@
                     </section>
                 </section>
             </div>
-            <div class="car__12">
-                <section class="background-slide" style="background: #6898ef;"></section>
-                <section class="wrap-slide">
-                    <section class="slide-left">
-                        <section class="product-name">
-                            <span>Will</span><span>Helm</span><span class="last-span">Winter 2</span>
-                            <section class="clear-both"></section>
-                        </section>
-                        <section class="wrap-button">
-                            <section class="left-buy-button"></section>
-                            <section class="content-buy-button"><section class="product-price">1.250.000 đ</section><a href="#">Mua ngay</a></section>
-                            <section class="right-buy-button"></section>
-                            <section class="clear-both"></section>
-                        </section>
-                    </section>
-                    <section class="slide-right">
-                        <img src="images/shoes-2.png" />
-                    </section>
-                </section>
-            </div>
+            
         </div>
     </div>
     <a href="javascript:void(0)" class="carouseller__right">›</a>
@@ -54,7 +35,7 @@
     <section class="container">
         <section id="wrap-categories">
             <section class="category">
-                <h3>Nữ</h3>
+                <h3>Quần Thể Thao</h3>
                 <section class="category-image">
                     <img src="images/woman.jpg" />
                 </section>
@@ -63,7 +44,7 @@
                 <img src="images/product-list-icon.png" />
             </section>
             <section class="category center-block">
-                <h3>Nam</h3>
+                <h3>Áo Thể Thao</h3>
                 <section class="category-image">
                     <img src="images/men.jpg" />
                 </section>
@@ -72,7 +53,7 @@
                 <img src="images/product-list-icon.png" />
             </section>
             <section class="category">
-                <h3>Trẻ em</h3>
+                <h3>Áo Khoác</h3>
                 <section class="category-image">
                     <img src="images/kids.jpg" />
                 </section>

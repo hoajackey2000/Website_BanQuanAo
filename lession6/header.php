@@ -141,7 +141,9 @@ and open the template in the editor.
             </div>
             <div id="header-bottom">
                 <section id="header-left">
-                    <img src="images/logo.png" />
+                    <a href="index.php">
+                    <img src="images/logo.png" /> 
+                    </a>
         </section>
 
     <?php
@@ -189,7 +191,7 @@ and open the template in the editor.
                     <div id="filter-box">
                         <form id="product-search" method="GET">
                             <input type="submit" value="" />
-                            <input type="text" value="<?=isset($_GET['name']) ? $_GET['name'] : ""?>" name="name" placeholder="Tìm kiếm" />
+                            <input type="text" value="<?=isset($_GET['name']) ? $_GET['name'] : ""?>" name="name" placeholder="Tìm kiếm sản phẩm" />
                         </form>
                         <div style="clear: both;" ></div>
                     </div>
