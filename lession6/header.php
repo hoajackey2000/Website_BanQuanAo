@@ -84,10 +84,48 @@ and open the template in the editor.
         $totalRecords = $totalRecords->num_rows;
         $totalPages = ceil($totalRecords / $item_per_page);
 
-        
+
+        if (!empty($_SESSION["cart"])) {
+            $product = mysqli_query($con, "SELECT * FROM `product` WHERE `id` IN (" . implode(",", array_keys($_SESSION["cart"])) . ")");
+        }
+
 ?>
          <div id="cart-icon">
-            <span>10</span>
+
+
+        <span>
+         
+            <?php
+            if (!empty($product)) {
+                $total = 0;
+                $num = 1;
+                while ($row = mysqli_fetch_array($product)) {
+                    ?>
+                    <?php
+                    $total += $_SESSION["cart"][$row['id']] ;
+                    $num++;
+                }
+                ?>
+                <!-- <tr id="row-total"> -->
+                     <td class="product-quantity"><?= $total, " " ?></td>
+                     
+                <!-- </tr> -->
+                <?php
+            }
+            ?>
+    </span>
+
+    
+
+        
+
+
+
+
+
+            <!-- <span>10</span> -->
+
+
             <a data-fancybox data-type="ajax" data-src="ajax-cart.php" href="javascript:;">
                 <img width="100" src="images/cart-icon.png" alt="alt"/>
             </a>

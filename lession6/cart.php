@@ -143,6 +143,7 @@
                             <?php
                             if (!empty($products)) {
                                 $total = 0;
+                                $total1 = 0;
                                 $num = 1;
                                 while ($row = mysqli_fetch_array($products)) {
                                     ?>
@@ -152,11 +153,14 @@
                                         <td class="product-img"><img src="./<?= $row['image'] ?>" /></td>
                                         <td class="product-price"><?= number_format($row['price'], 0, ",", ".") ?></td>
                                         <td class="product-quantity"><input type="text" value="<?= $_SESSION["cart"][$row['id']] ?>" name="quantity[<?= $row['id'] ?>]" /></td>
+                                        <!-- <td class="product-quantity"><input type="text" value="<?=( $_SESSION["cart"][$row['id']]) ?>" name="quantity[<?= $row['id'] ?>]" /></td>  -->
+
                                         <td class="total-money"><?= number_format($row['price'] * $_SESSION["cart"][$row['id']], 0, ",", ".") ?></td>
                                         <td class="product-delete"><a href="cart.php?action=delete&id=<?= $row['id'] ?>">Xóa</a></td>
                                     </tr>
                                     <?php
                                     $total += $row['price'] * $_SESSION["cart"][$row['id']];
+                                    $total1 += $_SESSION["cart"][$row['id']] ;
                                     $num++;
                                 }
                                 ?>
@@ -165,7 +169,7 @@
                                     <td class="product-name">Tổng tiền</td>
                                     <td class="product-img">&nbsp;</td>
                                     <td class="product-price">&nbsp;</td>
-                                    <td class="product-quantity">&nbsp;</td>
+                                    <td class="product-quantity"><?= $total1, " " ?></td>
                                     <td class="total-money"><?= number_format($total, 0, ",", ".") ?></td>
                                     <td class="product-delete">Xóa</td>
                                 </tr>
