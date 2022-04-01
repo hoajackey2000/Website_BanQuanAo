@@ -2,6 +2,7 @@
     <section class="container">
         <section id="footer-logo">
             <img src="images/footer-logo.png" />
+            <!-- <img src="images/logo.gif" />  -->
         </section>
         <section id="footer-link">
             <ul>
@@ -21,7 +22,6 @@
         <section class="clear-both"></section>
     </section>
 </footer>
-
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="js/carouseller.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
@@ -50,5 +50,6 @@
         $('#product-slide').carouseller();
     });
 </script>
+
 </body>
 </html>

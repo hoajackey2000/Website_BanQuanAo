@@ -177,9 +177,26 @@
                         <!-- <div id="form-button">
                             <input type="submit" name="update_click" value="Cập nhật" />
                         </div> -->
-                        <div class= Cart_title>
-                            <a href="cart.php">--> Xem chi tiết giỏ hàng và đặt hàng <--</a>
-                        </div>
+
+
+                    <?php
+                    if (!empty($_SESSION['current_user'])) { //Kiểm tra xem đã đăng nhập chưa?
+                    ?> 
+                        <?php if (!empty($_SESSION['current_user'])) {
+                            $currentUser = $_SESSION['current_user'];
+                            ?>
+
+
+                            <div class= Cart_title>
+                                <a href="cart.php">--> Xem chi tiết giỏ hàng và đặt hàng <--</a>
+                            </div>
+
+
+                        <?php } ?>
+                    <?php }else { ?>
+                        <a href="login.php">--> Bạn phải đăng nhập trước khi muốn thanh toán đơn hàng <--</a>
+                        <?php } ?>
+
                         <!-- <hr>
                         <div><label>Người nhận: </label><input type="text" value="" name="name" /></div>
                         <div><label>Điện thoại: </label><input type="text" value="" name="phone" /></div>

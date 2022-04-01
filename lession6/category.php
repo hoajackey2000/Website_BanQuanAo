@@ -117,17 +117,45 @@
                     <section class="product-name"><a href="detail.php?id=<?= $row['id'] ?>"><?= $row['name'] ?></a></section>
                     <section class="wrap-button">
                     <section class="left-buy-button"></section>
-                    <section class="content-buy-button">
-                        <?php if ($row['quantity'] > 0) { ?>
-                            <section class="product-price"><?= number_format($row['price'], 0, ",", ".") ?> đ</section>
-                            <form class="quick-buy-form" action="cart.php?action=add" method="POST">
-                                <input type="hidden" value="1" name="quantity[<?= $row['id'] ?>]" />
-                                <input type="submit" value="Mua ngay" />
-                            </form>
-                        <?php } else { ?>
-                            <a href="#">Hết hàng</a>
+                    <!-- <section class="content-buy-button"> -->
+
+                    <?php
+                    if (!empty($_SESSION['current_user'])) { //Kiểm tra xem đã đăng nhập chưa?
+                    ?> 
+                        <?php if (!empty($_SESSION['current_user'])) {
+                            $currentUser = $_SESSION['current_user'];
+                            ?>
+
+                        <section class="content-buy-button">
+                            <?php if ($row['quantity'] > 0) { ?>
+                                <section class="product-price"><?= number_format($row['price'], 0, ",", ".") ?> đ</section>
+                                <form class="quick-buy-form" action="cart.php?action=add" method="POST">
+                                    <input type="hidden" value="1" name="quantity[<?= $row['id'] ?>]" />
+                                    <input type="submit" value="Mua ngay" />
+                                </form>
+                            <?php } else { ?>
+                                <a href="#">Hết hàng</a>
+                            <?php } ?>
+                        </section>
+
                         <?php } ?>
-                    </section>
+                    <?php }else { ?>
+                        <section class="content-buy-button">
+                            <?php if ($row['quantity'] > 0) { ?>
+                                <section class="product-price"><?= number_format($row['price'], 0, ",", ".") ?> đ</section>
+                                <form class="quick-buy-form" action="login.php" >
+                                    <input type="submit" value="Mua ngay" />
+                                </form>
+                            <?php } else { ?>
+                                <a href="#">Hết hàng</a>
+                            <?php } ?>
+                            </section>
+                    <?php } ?>
+
+
+
+
+                    <!-- </section> -->
                     <section class="right-buy-button"></section>
                     <section class="clear-both"></section>
                 </section>

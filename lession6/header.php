@@ -14,6 +14,11 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/fonts.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/category.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+        <!-- <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon"> -->
+
     </head>
     <body>
 <?php
@@ -91,10 +96,7 @@ and open the template in the editor.
 
 ?>
          <div id="cart-icon">
-
-
         <span>
-         
             <?php
             if (!empty($product)) {
                 $total = 0;
@@ -106,26 +108,12 @@ and open the template in the editor.
                     $num++;
                 }
                 ?>
-                <!-- <tr id="row-total"> -->
                      <td class="product-quantity"><?= $total, "" ?></td>
                      
-                <!-- </tr> -->
                 <?php
             }
             ?>
     </span>
-
-    
-
-        
-
-
-
-
-
-            <!-- <span>10</span> -->
-
-
             <a data-fancybox data-type="ajax" data-src="ajax-cart.php" href="javascript:;">
                 <img width="100" src="images/cart-icon.png" alt="alt"/>
             </a>
@@ -142,7 +130,7 @@ and open the template in the editor.
             <div id="header-bottom">
                 <section id="header-left">
                     <a href="index.php">
-                    <img src="images/logo.png" /> 
+                    <img src="images/logo.gif" /> 
                     </a>
         </section>
 

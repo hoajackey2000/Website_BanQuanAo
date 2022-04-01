@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include 'header.php';?>
 <!DOCTYPE html>
 
 <html>
@@ -114,7 +114,7 @@
 //        $imgLibrary = mysqli_query($con, "SELECT * FROM `image_library` WHERE `product_id` = ".$_GET['id']);
 //        $product['images'] = mysqli_fetch_all($imgLibrary, MYSQLI_ASSOC);
         ?>
-        <div class="container">
+        <div class="container_cart">
             <?php if (!empty($error)) { ?> 
                 <div id="notify-msg">
                     <?= $error ?>. <a href="javascript:history.back()">Quay lại</a>
@@ -130,7 +130,7 @@
                     <h3>Số lượng sản phẩm trong giỏ hàng đã thay đổi, do lượng sản phẩm tồn kho không đủ. Vui lòng <a href="cart.php">tải lại</a> giỏ hàng</h3>
                 <?php } else { ?>
                     <form id="cart-form" action="cart.php?action=submit" method="POST">
-                        <table>
+                        <table class="cart_table">
                             <tr>
                                 <th class="product-number">STT</th>
                                 <th class="product-name">Tên sản phẩm</th>
@@ -192,3 +192,4 @@
         </div>
     </body>
 </html>
+<?php include 'footer.php';?>
