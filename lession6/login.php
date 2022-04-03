@@ -4,7 +4,7 @@
         <title>Trang Quản Trị</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../login_register.css">
     </head>
     <body>
     <?php
@@ -46,18 +46,23 @@
             include './facebook_source.php';
             include './google_source.php';
             ?>
-            <div id="user_login" class="box-content">
+            <div id="user_login" class="box-content-login">
                 <h1>Đăng nhập tài khoản</h1>
                 <form action="./index.php" method="Post" autocomplete="off">
-                    <label>Username</label></br>
-                    <input type="text" name="username" value="" /><br/>
-                    <label>Password</label></br>
-                    <input type="password" name="password" value="" /></br>
+                <div class="form-control">
+					<input type="text" name="username" value="" placeholder="Username">
+					<span></span>
+					<small></small>
+				</div>
+				<div class="form-control">
+					<input type="password" name="password" value="" placeholder="Password">
+					<span></span>
+					<small></small>
+				</div>
                     <br>
                     <input type="submit" value="Đăng nhập" />
                 </form>
-                <a href="./register.php">Đăng ký tài khoản</a>
-                <h2>Hoặc đăng nhập với mạng xã hội</h2>
+                <div class="signup_link">Quên mật khẩu ? <a href="register.php">Đăng Ký</a></div>
                 <div id="login-with-social">
                     <a href="<?= $loginUrl ?>"><img src="./images/login_facebook.png" alt='facebook login' title="Facebook Login" height="50" width="280" /></a>
                     <?php if(isset($authUrl)){ ?>

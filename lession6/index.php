@@ -1,7 +1,5 @@
 <?php include 'header.php'; ?>
 
-        
-
 <section id="product-slide" class="carouseller"> 
     <a href="javascript:void(0)" class="carouseller__left">‹</a> 
     <div class="carouseller__wrap"> 
@@ -87,7 +85,7 @@
             <section class="category">
                 <h3>Quần Thể Thao</h3>
                 <section class="category-image">
-                    <img src="images/woman.jpg" />
+                    <img src="./uploads/29-03-2022/Quần_Shorts_thể_thao_Nike_Tempo_Run_Division_(2).jpg" />
                 </section>
                 <section class="total-product">Tổng</section>
                 <section class="number-product">357 sản phẩm</section>
@@ -105,7 +103,7 @@
             <section class="category">
                 <h3>Áo Khoác</h3>
                 <section class="category-image">
-                    <img src="images/kids.jpg" />
+                    <img src="./uploads/29-03-2022/Áo_khoác_Nike_Swoosh_Shrpa_GX_Fullzip_‘Black_White’_(10).png" />
                 </section>
                 <section class="total-product">Tổng</section>
                 <section class="number-product">251 sản phẩm</section>
@@ -115,6 +113,8 @@
         </section>
     </section>
 </section>
+
+
 <section id="hot-products">
     <section class="container">
         <section class="heading-title">

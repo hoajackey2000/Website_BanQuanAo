@@ -37,7 +37,7 @@ function showMenuSelectBox($list, $num, $parent_id) {
         }
     }
 }
-
+// hiển thị menu
 function showMenuTree($list, $num, $config_name) {
     $num++;
     foreach ($list as $item) {
@@ -51,35 +51,36 @@ function showMenuTree($list, $num, $config_name) {
 // dẫn vào temlate li
 function renderTemplate($filePath, $params) {
     $output = "";
-    // Extract the variables to a local namespace
+    // Trích xuất các biến vào một không gian tên cục bộ $params
     extract($params);
 
-    // Start output buffering
+    // Bắt đầu lưu vào bộ đệm đầu ra
     ob_start();
 
     // Include the template file
     include $filePath;
 
-    // End buffering and return its contents
+    // Kết thúc bộ đệm và trả về nội dung của nó
     $output = ob_get_clean();
     return $output;
 }
 
-function createMenuTree(&$menuList, $parent_id) {
-    $menuTree = array();
-    foreach ($menuList as $key => $menu) {
-        if ($menu['parent_id'] == $parent_id) {
-            $children = createMenuTree($menuList, $menu['id']);
-            if ($children) {
-                $menu['children'] = $children;
-            }
-            $menuTree[] = $menu;
-            unset($menuList[$key]);
-        }
-    }
-    return $menuTree;
+// tạo menu
+function createMenuTree(&$menuList, $parent_id){
+	$menuTree = array();
+	foreach ($menuList as $key => $menu) {
+		if($menu['parent_id'] == $parent_id){
+			$children = createMenuTree($menuList, $menu['id']);
+			if($children){
+				$menu['children'] = $children;
+			}
+			$menuTree[] = $menu;
+			unset($menuList[$key]);
+		}
+	}
+	return $menuTree;
 }
-
+// lấy tất cả các file đưa vào thư mục uploads/*
 function getAllFiles() {
     $allFiles = array();
     $allDirs = glob('uploads/*');
@@ -202,7 +203,7 @@ function loginFromSocialCallBack($socialUser) {
         header('Location: ./index.php');
     }
 }
-
+// hàm xử lý ngày tháng khi đki
 function validateDateTime($date) {
     //Kiểm tra định dạng ngày tháng xem đúng DD/MM/YYYY hay chưa?
     preg_match('/^[0-9]{1,2}-[0-9]{1,2}-[0-9]{4}$/', $date, $matches);

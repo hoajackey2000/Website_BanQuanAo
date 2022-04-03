@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../login_register.css">
 </head>
 <body>
 <?php
@@ -54,17 +54,56 @@
             <div id="user_register" class="box-content">
                 <h1>Đăng ký tài khoản</h1>
                 <form action="./register.php?action=reg" method="Post" autocomplete="off">
-                    <label>Username</label></br>
-                    <input type="text" name="username" value=""><br/>
-                    <label>Password</label></br>
-                    <input type="password" name="password" value="" /></br>
-                    <label>Họ tên</label></br>
-                    <input type="text" name="fullname" value="" /><br/>
-                    <label>Ngày sinh (DD-MM-YYYY)</label></br>
-                    <input type="text" name="birthday" value="" /><br/>
-                    </br>
+
+                    <!-- <div  class="form-control-register">
+                        <input type="text" name="username" value="" placeholder="Username"><br/>
+                        <span></span>
+                        <small></small>
+                    </div>
+
+                    <div  class="form-control-register">
+                        <input type="password" name="password" value="" placeholder="Password"/></br>
+                        <span></span>
+                        <small></small>
+                    </div>
+
+                    <div  class="form-control-register">
+                        <input type="text" name="fullname" value="" placeholder="Họ tên"/><br/>
+                        <span></span>
+                        <small></small>
+                    </div>
+
+                    <div  class="form-control-register">
+                        <input type="text" name="birthday" value="" placeholder="Ngày sinh (DD-MM-YYYY)"/><br/>
+                        <span></span>
+                        <small></small>
+                    </div> -->
+
+				<div class="form-control">
+					<input type="text" name="username" value="" placeholder="Username">
+					<span></span>
+					<small></small>
+				</div>
+				<div class="form-control">
+					<input type="password" name="password" value="" placeholder="Password">
+					<span></span>
+					<small></small>
+				</div>
+				<div class="form-control">
+					<input type="text" name="fullname" value="" placeholder="Fullname">
+					<span></span>
+					<small></small>
+				</div>
+                <div class="form-control">
+					<input type="text" name="birthday" value="" placeholder="Ngày sinh (DD-MM-YYYY)">
+					<span></span>
+					<small></small>
+				</div>
                     </br>
                     <input type="submit" value="Đăng ký"/>
+
+                    <div class="signup_link">Không phải là thành viên? <a href="login.php">Đăng nhập</a></div>
+
                 </form>
             </div>
             <?php

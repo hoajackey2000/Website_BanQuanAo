@@ -9,13 +9,14 @@ and open the template in the editor.
         <title>Đăng xuất tài khoản</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../login_register.css">
     </head>
     <body>
         <?php
         session_start();
         unset($_SESSION['current_user']);
         unset($_SESSION['access_token']);
+        unset($_SESSION['cart']);
         ?>
         <div id="user_logout" class="box-content">
             <h1>Đăng xuất tài khoản thành công</h1>

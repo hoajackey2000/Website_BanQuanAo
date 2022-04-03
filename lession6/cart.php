@@ -72,11 +72,11 @@
                             $error = "Giỏ hàng rỗng";
                         }
                         if ($error == false && !empty($_POST['quantity'])) { //Xử lý lưu giỏ hàng vào db
-                            $products = mysqli_query($con, "SELECT * FROM `product` WHERE `id` IN (" . implode(",", array_keys($_POST['quantity'])) . ")");
+                            $product = mysqli_query($con, "SELECT * FROM `product` WHERE `id` IN (" . implode(",", array_keys($_POST['quantity'])) . ")");
                             $total = 0;
                             $orderProducts = array();
                             $updateString = "";
-                            while ($row = mysqli_fetch_array($products)) {
+                            while ($row = mysqli_fetch_array($product)) {
                                 $orderProducts[] = $row;
                                 if ($_POST['quantity'][$row['id']] > $row['quantity']) {
                                     $_POST['quantity'][$row['id']] = $row['quantity'];
@@ -107,7 +107,7 @@
             }
         }
         if (!empty($_SESSION["cart"])) {
-            $products = mysqli_query($con, "SELECT * FROM `product` WHERE `id` IN (" . implode(",", array_keys($_SESSION["cart"])) . ")");
+            $product = mysqli_query($con, "SELECT * FROM `product` WHERE `id` IN (" . implode(",", array_keys($_SESSION["cart"])) . ")");
         }
 //        $result = mysqli_query($con, "SELECT * FROM `product` WHERE `id` = ".$_GET['id']);
 //        $product = mysqli_fetch_assoc($result);
@@ -141,11 +141,11 @@
                                 <th class="product-delete">Xóa</th>
                             </tr>
                             <?php
-                            if (!empty($products)) {
+                            if (!empty($product)) {
                                 $total = 0;
                                 $total1 = 0;
                                 $num = 1;
-                                while ($row = mysqli_fetch_array($products)) {
+                                while ($row = mysqli_fetch_array($product)) {
                                     ?>
                                     <tr>
                                         <td class="product-number"><?= $num++; ?></td>
@@ -153,8 +153,6 @@
                                         <td class="product-img"><img src="./<?= $row['image'] ?>" /></td>
                                         <td class="product-price"><?= number_format($row['price'], 0, ",", ".") ?></td>
                                         <td class="product-quantity"><input type="text" value="<?= $_SESSION["cart"][$row['id']] ?>" name="quantity[<?= $row['id'] ?>]" /></td>
-                                        <!-- <td class="product-quantity"><input type="text" value="<?=( $_SESSION["cart"][$row['id']]) ?>" name="quantity[<?= $row['id'] ?>]" /></td>  -->
-
                                         <td class="total-money"><?= number_format($row['price'] * $_SESSION["cart"][$row['id']], 0, ",", ".") ?></td>
                                         <td class="product-delete"><a href="cart.php?action=delete&id=<?= $row['id'] ?>">Xóa</a></td>
                                     </tr>

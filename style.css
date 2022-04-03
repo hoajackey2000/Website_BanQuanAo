@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100;1,200&display=swap');
 
+
+
 table,
 th,
 td {
@@ -22,31 +24,6 @@ td {
     text-align: center;
 }
 
-/* style form register */
-
-.box-content {
-    margin: 0 auto;
-    width: 800px;
-    border: 1px solid #ccc;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Đăng ký, Đăng nhập */
-#user_register form,
-#user_login form,
-#user_logout form {
-    width: 200px;
-    margin: 40px auto;
-}
-
-#user_register form input,
-#user_login form input,
-#user_logout form input {
-    margin: 5px 0;
-}
-
-
 /* Thêm, Xóa, Sửa tài khoản */
 
 #create_user form,
@@ -68,7 +45,6 @@ td {
 body {
     /* font-family: arial; */
     font-family: "Font Awesome 5 Free";
-
 }
 
 
@@ -85,7 +61,7 @@ body {
 
 h1 {
     text-align: center;
-    margin: 10px;
+    margin: 20px;
 }
 
 .product-items {
@@ -162,8 +138,6 @@ a {
 .buy-button {
     text-align: right;
     margin-top: 10px;
-    /* border-radius: 10xp; */
-    /* text-align: center; */
 }
 
 .buy-button-index {
@@ -312,13 +286,13 @@ input[type="number"] {
 }
 
 /* + - */
-span {
+.total-quantity span {
     background: green;
     width: 30px;
     height: 26px;
     text-align: center;
     margin-top: 1px;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
@@ -336,12 +310,37 @@ span.product-price {
     background: none;
 }
 
+/* detail */
+.btn-primary {
+    color: #fff;
+    background-color: #ff6a00;
+    border-color: #ff6a00;
+}
 
+.total-quantity {
+    display: flex;
+    margin: 10px 0;
+}
 
+.total-quantity button {
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.total-quantity button:hover {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0.9;
+    color: #f4f4f4 !important;
+    background-color: #8cc84c;
+}
 
 
 
 /* bản đơn hàng */
+
 table {
     border-collapse: collapse;
     width: 962px;
@@ -396,6 +395,13 @@ table .total-money {
     margin-top: 15px;
 }
 
+#form-button input {
+    background: green;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+}
+
 .product-delete {
     width: 100px;
     text-align: center;
@@ -414,6 +420,7 @@ table .total-money {
 #cart-form input {
     line-height: 30px;
     height: 30px;
+    border-radius: 5px;
 }
 
 input[name="order_click"] {
@@ -567,31 +574,4 @@ input[name="order_click"] {
 .left-panel span {
     color: #eeff09;
     font-weight: bold;
-}
-
-/* detail */
-.btn-primary {
-    color: #fff;
-    background-color: #ff6a00;
-    border-color: #ff6a00;
-}
-
-.total-quantity {
-    display: flex;
-    margin: 10px 0;
-}
-
-.total-quantity button {
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.total-quantity button:hover {
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
-    opacity: 0.9;
-    color: #f4f4f4 !important;
-    background-color: #8cc84c;
 }

@@ -145,16 +145,6 @@
                                         <td class="product-price"><?= number_format($row['price'], 0, ",", ".") ?></td>
                                         <td class="product-quantity"><input type="text" value="<?= $_SESSION["cart"][$row['id']] ?>" name="quantity[<?= $row['id'] ?>]" readonly /></td>
                                         <td class="total-money"><?= number_format($row['price'] * $_SESSION["cart"][$row['id']], 0, ",", ".") ?></td>
-                                        <!-- <td class="product-delete">
-                                        <section class="wrap-button">
-                                            <section class="left-buy-button"></section>
-                                            <section class="content-buy-button">
-                                                <a href="cart.php?action=delete&id=<?= $row['id'] ?>">Xóa</a>
-                                            </section>
-                                            <section class="right-buy-button"></section>
-                                            <section class="clear-both"></section>
-                                        </section>
-                                        </td> -->
                                     </tr>
                                     <?php
                                     $total += $row['price'] * $_SESSION["cart"][$row['id']];

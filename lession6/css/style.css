@@ -46,6 +46,7 @@ header {
 #header-right {
     float: left;
     width: 50%;
+    padding-top: 15px;
 }
 
 #header-bottom {
@@ -501,6 +502,14 @@ footer img {
     padding: 0 5px;
 }
 
+#footer-link ul li a:hover {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0.9;
+    color: #000;
+}
+
+
 #footer-link ul li:first-child a {
     border-left: 0;
 }
@@ -621,7 +630,7 @@ table .total-money {
 #cart-form input {
     line-height: 30px;
     height: 30px;
-    border: 1px solid #ededed;
+    border: 1px solid green;
 }
 
 #cart-form input:focus {}
@@ -668,6 +677,7 @@ input[name="order_click"] {
 .dropdown {
     position: relative;
     display: inline-block;
+    padding-top: 30px;
 }
 
 .dropdown-content {
@@ -696,7 +706,7 @@ input[name="order_click"] {
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #8cc84c;
 }
 
 
