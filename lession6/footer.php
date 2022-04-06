@@ -45,6 +45,25 @@
         });
     });
 </script>
+<script>
+    $(".add-to-ajax-cart-form").submit(function (event) {
+        event.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: './process_cart.php?action=add',
+            data: $(this).serializeArray(),
+            success: function (response) {
+                response = JSON.parse(response);
+                if (response.status == 0) { //Có lỗi
+                    alert(response.message);
+                } else { //Mua thành công
+                    alert(response.message);
+                    location.reload(); //load lại trang
+                }
+            }
+        });
+    });
+</script>
 <script type="text/javascript">
     $(function () {
         $('#product-slide').carouseller();

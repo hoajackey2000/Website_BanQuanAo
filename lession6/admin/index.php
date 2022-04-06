@@ -44,12 +44,18 @@
         <?php } ?>
         <?php if (empty($_SESSION['current_user'])) { ?>
             <div id="user_login" class="box-content">
-                <h1>Đăng nhập tài khoản</h1>
+                <h1>ĐĂNG NHẬP TÀI KHOẢN ADMIN</h1>
                 <form action="./index.php" method="Post" autocomplete="off">
-                    <label>Username</label></br>
-                    <input type="text" name="username" value="" /><br/>
-                    <label>Password</label></br>
-                    <input type="password" name="password" value="" /></br>
+                <div class="form-control">
+					<input type="text" name="username" value="" placeholder="Username">
+					<span></span>
+					<small></small>
+				</div>
+				<div class="form-control">
+					<input type="password" name="password" value="" placeholder="Password">
+					<span></span>
+					<small></small>
+				</div>
                     <br>
                     <input type="submit" value="Đăng nhập" />
                 </form>

@@ -150,7 +150,7 @@
                                     <tr>
                                         <td class="product-number"><?= $num++; ?></td>
                                         <td class="product-name"><?= $row['name'] ?></td>
-                                        <td class="product-img"><img src="./<?= $row['image'] ?>" /></td>
+                                        <td class="product-img"><a href="detail.php?id=<?= $row['id'] ?>"><img src="./<?= $row['image'] ?>" /></a></td>
                                         <td class="product-price"><?= number_format($row['price'], 0, ",", ".") ?></td>
                                         <td class="product-quantity"><input type="text" value="<?= $_SESSION["cart"][$row['id']] ?>" name="quantity[<?= $row['id'] ?>]" /></td>
                                         <td class="total-money"><?= number_format($row['price'] * $_SESSION["cart"][$row['id']], 0, ",", ".") ?></td>

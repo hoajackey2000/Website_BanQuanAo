@@ -54,31 +54,6 @@
             <div id="user_register" class="box-content">
                 <h1>Đăng ký tài khoản</h1>
                 <form action="./register.php?action=reg" method="Post" autocomplete="off">
-
-                    <!-- <div  class="form-control-register">
-                        <input type="text" name="username" value="" placeholder="Username"><br/>
-                        <span></span>
-                        <small></small>
-                    </div>
-
-                    <div  class="form-control-register">
-                        <input type="password" name="password" value="" placeholder="Password"/></br>
-                        <span></span>
-                        <small></small>
-                    </div>
-
-                    <div  class="form-control-register">
-                        <input type="text" name="fullname" value="" placeholder="Họ tên"/><br/>
-                        <span></span>
-                        <small></small>
-                    </div>
-
-                    <div  class="form-control-register">
-                        <input type="text" name="birthday" value="" placeholder="Ngày sinh (DD-MM-YYYY)"/><br/>
-                        <span></span>
-                        <small></small>
-                    </div> -->
-
 				<div class="form-control">
 					<input type="text" name="username" value="" placeholder="Username">
 					<span></span>
