@@ -14,9 +14,28 @@
             </ul>
         </section>
         <section id="social-network-link">
-            <a href="#"><img src="images/pinterest.png" /></a>
+            <!-- <a href="#"><img src="images/pinterest.png" /></a>
             <a href="#"><img src="images/twitter.png" /></a>
-            <a href="#"><img src="images/facebook.png" /></a>
+            <a href="#"><img src="images/facebook.png" /></a> -->
+
+
+
+            <div class="wrapper">
+                <div class="icon facebook">
+                    <i class="fab fa-facebook-f"><a href="#"><img src="images/facebook.png" /></a></i>
+                </div>
+
+                <div class="icon twitter">
+                    <i class="fab fa-github"><a href="#"><img src="images/twitter.png" /></a></i>
+                </div>
+
+                <div class="icon youtube">
+                    <i class="fab fa-youtube"><a href="#"><img src="images/pinterest.png" /></a></i>
+                </div>
+            </div>
+
+
+
         </section>
         <section class="clear-both"></section>
     </section>
@@ -68,6 +87,8 @@
         $('#product-slide').carouseller();
     });
 </script>
+
+<script src="./js/carouseller_auto.js"></script>
 
 </body>
 </html>

@@ -172,6 +172,8 @@
                             }
                             ?>
                         </table>
+
+                        
                         <div id="form-button">
                             <input type="submit" name="update_click" value="Cập nhật" />
                         </div>
@@ -181,6 +183,8 @@
                         <div><label>Địa chỉ: </label><input type="text" value="" name="address" /></div>
                         <div><label>Ghi chú: </label><textarea name="note" cols="50" rows="7" ></textarea></div>
                         <input type="submit" name="order_click" value="Đặt hàng" />
+                        
+
                     </form>
                 <?php } ?>
             <?php } ?>

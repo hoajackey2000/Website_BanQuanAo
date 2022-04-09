@@ -16,8 +16,8 @@
 .carouseller [class*="car__"] {
 	display: inline-block;
 	position: relative;
-	margin-left: 0.2564102564102564% !important;
-	*margin-left: 0.25109110747408616% !important;
+	/* margin-left: 0.2564102564102564% !important;
+	*margin-left: 0.25109110747408616% !important; */
 	float: left;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;

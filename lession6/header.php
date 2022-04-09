@@ -90,6 +90,9 @@ and open the template in the editor.
             $product = mysqli_query($con, "SELECT * FROM `product` WHERE `id` IN (" . implode(",", array_keys($_SESSION["cart"])) . ")");
         }
 ?>
+
+        
+
          <div id="cart-icon">
         <span>
             <?php
@@ -148,7 +151,7 @@ and open the template in the editor.
         <?php }else { ?>
             <section id="header-right">
                         <section id="header-link">
-                            <a id="cart-link" href="cart.php"><img src="images/cart.png" /></a>
+                            <!-- <a id="cart-link" href="cart.php"><img src="images/cart.png" /></a> -->
                             <a id="login-link" href="./login.php">Đăng nhập</a>
                             <a id="register-link" href="register.php"><img src="images/register.png" /></a>
                         </section>
@@ -163,10 +166,10 @@ and open the template in the editor.
                 <section class="container">
                     <ul>
                         <li><a href="./index.php">Trang chủ</a></li>
-                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="./new.php">Tin tức</a></li>
                         <li><a href="./category.php">Sản phẩm</a></li>
                         <li><a href="#">Chúng tôi</a></li>
-                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="./contact.php">Liên hệ</a></li>
                         <li class="clear-both"></li>
                     </ul>
                     <div id="filter-box">
@@ -178,7 +181,6 @@ and open the template in the editor.
                     </div>
                 </section>
             </section>
-
 </header>
 
 

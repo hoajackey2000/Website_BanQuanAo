@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 
 <section id="product-slide" class="carouseller"> 
-    <a href="javascript:void(0)" class="carouseller__left">‹</a> 
+    <!-- <a href="javascript:void(0)" class="carouseller__left">‹</a>  -->
     <div class="carouseller__wrap"> 
         <div class="carouseller__list"> 
             <div class="car__12">
@@ -78,7 +78,7 @@
             
         </div>
     </div>
-    <a href="javascript:void(0)" class="carouseller__right">›</a>
+    <!-- <a href="javascript:void(0)" class="carouseller__right">›</a> -->
 </section>
 
 <section id="hot-categories">
