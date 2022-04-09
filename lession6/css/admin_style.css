@@ -247,6 +247,15 @@ a:hover {
     color: #000;
 }
 
+/* chỉnh màu xen kẻ */
+li:nth-child(even) {
+    background-color: #dddddd;
+}
+
+img {
+    width: 40px;
+}
+
 .current-page {
     background: #000;
     color: #FFF;

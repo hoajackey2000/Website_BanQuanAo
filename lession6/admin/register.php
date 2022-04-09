@@ -39,7 +39,7 @@
                 <?php } else { ?>
                     <div id="edit-notify" class="box-content">
                         <h1><?= ($error !== false) ? $error : "Đăng ký tài khoản thành công" ?></h1>
-                        <a href="./index.php">Mời bạn đăng nhập</a>
+                        <a href="./product_listing.php">Quay lại Trang Quản Trị</a>
                     </div>
                 <?php } ?>
             <?php } else { ?>

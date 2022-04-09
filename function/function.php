@@ -23,7 +23,7 @@ function deleteChildrenMenu($parent_id,$menuList,$con){
     }
 }
 
-// hiển thị chọn cấp bậc theo box
+// xử lý hiển thị chọn cấp bậc theo box
 function showMenuSelectBox($list, $num, $parent_id) {
     $num++;
     foreach ($list as $item) {
@@ -37,7 +37,7 @@ function showMenuSelectBox($list, $num, $parent_id) {
         }
     }
 }
-// hiển thị menu
+// xử lý hiển thị menu
 function showMenuTree($list, $num, $config_name) {
     $num++;
     foreach ($list as $item) {

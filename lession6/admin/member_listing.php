@@ -83,13 +83,13 @@ if (!empty($_SESSION['current_user'])) {
 						<div class="listing-prop listing-username"><?= $row['username'] ?></div>
 						<div class="listing-prop listing-fullname"><?= $row['fullname'] ?></div>
 						<div class="listing-prop listing-button">
-							<a href="./<?=$config_name?>_delete.php?id=<?= $row['id'] ?>">Xóa</a>
+							<a href="./<?=$config_name?>_delete.php?id=<?= $row['id'] ?>"><img src="../images/icons_delete.png" ></a>
 						</div>
 						<div class="listing-prop listing-button">
-							<a href="./<?=$config_name?>_editing.php?id=<?= $row['id'] ?>">Sửa</a>
+							<a href="./<?=$config_name?>_editing.php?id=<?= $row['id'] ?>"><img src="../images/icons_edit.png" ></a>
 						</div>
 						<div class="listing-prop listing-privilege">
-							<a href="./<?=$config_name?>_privilege.php?id=<?= $row['id'] ?>">Phân quyền</a>
+							<a href="./<?=$config_name?>_privilege.php?id=<?= $row['id'] ?>"><img src="../images/icons_privilege.png" ></a>
 						</div>
 						<div class="listing-prop listing-time"><?= date('d/m/Y H:i', $row['created_time']) ?></div>
 						<div class="listing-prop listing-time"><?= date('d/m/Y H:i', $row['last_updated']) ?></div>

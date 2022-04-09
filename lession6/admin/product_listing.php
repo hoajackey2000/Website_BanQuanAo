@@ -92,17 +92,17 @@ if (!empty($_SESSION['current_user'])) {
                         <div class="listing-prop listing-name"><?= $row['name'] ?></div>
                         <?php if (checkPrivilege($config_name.'_delete.php?id='.$row['id'])) { ?>
                         <div class="listing-prop listing-button">
-                            <a href="./<?=$config_name?>_delete.php?id=<?= $row['id'] ?>">Xóa</a>
+                            <a href="./<?=$config_name?>_delete.php?id=<?= $row['id'] ?>"><img src="../images/icons_delete.png" ></a>
                         </div>
                         <?php } ?>
                         <?php if (checkPrivilege($config_name.'_editing.php?id='.$row['id'])) { ?>
                         <div class="listing-prop listing-button">
-                            <a href="./<?=$config_name?>_editing.php?id=<?= $row['id'] ?>">Sửa</a>
+                            <a href="./<?=$config_name?>_editing.php?id=<?= $row['id'] ?>"><img src="../images/icons_edit.png" ></a>
                         </div>
                         <?php } ?>
                         <?php if (checkPrivilege($config_name.'_editing.php?id='.$row['id'].'&task=copy')) { ?>
                         <div class="listing-prop listing-button">
-                            <a href="./<?=$config_name?>_editing.php?id=<?= $row['id'] ?>&task=copy">Copy</a>
+                            <a href="./<?=$config_name?>_editing.php?id=<?= $row['id'] ?>&task=copy"><img src="../images/icons_copy.png" ></a>
                         </div>
                         <?php } ?>
                         <div class="listing-prop listing-time"><?= date('d/m/Y H:i', $row['created_time']) ?></div>

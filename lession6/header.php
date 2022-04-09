@@ -83,13 +83,12 @@ and open the template in the editor.
             $totalRecords = mysqli_query($con, "SELECT * FROM `product`");
         }
         $totalRecords = $totalRecords->num_rows;
-        $totalPages = ceil($totalRecords / $item_per_page);
+        $totalPages = ceil($totalRecords / $item_per_page);//ceil làm tròn
 
 
         if (!empty($_SESSION["cart"])) {
             $product = mysqli_query($con, "SELECT * FROM `product` WHERE `id` IN (" . implode(",", array_keys($_SESSION["cart"])) . ")");
         }
-
 ?>
          <div id="cart-icon">
         <span>
@@ -141,6 +140,7 @@ and open the template in the editor.
                         </button>
 
                         <div class="dropdown-content">
+                            <a href="./edit.php">Đổi mật khẩu</a>
                             <a href="./logout.php">Đăng xuất</a>
                         </div>
                 </div>

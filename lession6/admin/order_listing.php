@@ -111,13 +111,13 @@ if (!empty($_SESSION['current_user'])) {
 
                    
                         <div class="listing-prop listing-button">
-                            <a href="./<?=$config_name?>_delete.php?id=<?= $row['id'] ?>">Xóa</a>
+                            <a href="./<?=$config_name?>_delete.php?id=<?= $row['id'] ?>"><img src="../images/icons_delete.png" ></a>
                         </div>
                       
 
 
                     <div class="listing-prop listing-button">
-                        <a href="order_printing.php?id=<?=$row['id']?>" target="_blank">In</a>
+                        <a href="order_printing.php?id=<?=$row['id']?>" target="_blank"><img src="../images/icons_print.png" ></a>
                     </div>
                     <div class="listing-prop listing-time"><?=date('d/m/Y H:i', $row['created_time'])?></div>
                         

@@ -7,48 +7,29 @@
             <div class="car__12">
 
 
-
-
                 <section class="background-slide" style="background: #9ccd8d;"></section>
                 <section class="wrap-slide">
                     <section class="slide-left">
                         <section class="product-name">
-                            <span>Will</span><span>Helm</span><span class="last-span">Winter</span>
+                            <span>SPORTS</span><span>COAT</span><span class="last-span">RBNIKE</span>
                             <section class="clear-both"></section>
                         </section>
                         <section class="wrap-button">
                             <section class="left-buy-button"></section>
-                            <section class="content-buy-button"><section class="product-price">1.500.000 đ</section><a href="#">Mua ngay</a></section>
+
+
+                            <!-- <section class="content-buy-button">
+                                <section class="product-price">1.500.000 đ</section>
+                                <a href="#">Mua ngay</a>
+                            </section> -->
+
+
                             <section class="right-buy-button"></section>
                             <section class="clear-both"></section>
                         </section>
                     </section>
                     <section class="slide-right">
-                        <img src="images/shoes-1.png" />
-                    </section>
-                </section>
-
-
-
-            </div>
-
-            <!-- <div class="car__12">
-                <section class="background-slide" style="background: #9ccd8d;"></section>
-                <section class="wrap-slide">
-                    <section class="slide-left">
-                        <section class="product-name">
-                            <span>Will</span><span>Helm</span><span class="last-span">Winter</span>
-                            <section class="clear-both"></section>
-                        </section>
-                        <section class="wrap-button">
-                            <section class="left-buy-button"></section>
-                            <section class="content-buy-button"><section class="product-price">1.500.000 đ</section><a href="#">Mua ngay</a></section>
-                            <section class="right-buy-button"></section>
-                            <section class="clear-both"></section>
-                        </section>
-                    </section>
-                    <section class="slide-right">
-                        <img src="images/shoes-2.png" />
+                        <img src="uploads/img_QC/img_aokhoac.png" />
                     </section>
                 </section>
             </div>
@@ -58,21 +39,42 @@
                 <section class="wrap-slide">
                     <section class="slide-left">
                         <section class="product-name">
-                            <span>Will</span><span>Helm</span><span class="last-span">Winter</span>
+                            <span>SPORTS</span><span>SHIRT</span><span class="last-span">RBNIKE</span>
                             <section class="clear-both"></section>
                         </section>
                         <section class="wrap-button">
                             <section class="left-buy-button"></section>
-                            <section class="content-buy-button"><section class="product-price">1.500.000 đ</section><a href="#">Mua ngay</a></section>
+                            <!-- <section class="content-buy-button"><section class="product-price">1.500.000 đ</section><a href="#">Mua ngay</a></section> -->
                             <section class="right-buy-button"></section>
                             <section class="clear-both"></section>
                         </section>
                     </section>
                     <section class="slide-right">
-                        <img src="images/shoes-3.png" />
+                        <img src="uploads/img_QC/img_quan.png" />
                     </section>
                 </section>
-            </div> -->
+            </div>
+
+            <div class="car__12">
+                <section class="background-slide" style="background: #9ccd8d;"></section>
+                <section class="wrap-slide">
+                    <section class="slide-left">
+                        <section class="product-name">
+                            <span>SPORTS</span><span>SPANTS</span><span class="last-span">RBNIKE</span>
+                            <section class="clear-both"></section>
+                        </section>
+                        <section class="wrap-button">
+                            <section class="left-buy-button"></section>
+                            <!-- <section class="content-buy-button"><section class="product-price">1.500.000 đ</section><a href="#">Mua ngay</a></section> -->
+                            <section class="right-buy-button"></section>
+                            <section class="clear-both"></section>
+                        </section>
+                    </section>
+                    <section class="slide-right">
+                        <img src="uploads/img_QC/img_ao.png" />
+                    </section>
+                </section>
+            </div>
             
         </div>
     </div>
@@ -94,7 +96,7 @@
             <section class="category center-block">
                 <h3>Áo Thể Thao</h3>
                 <section class="category-image">
-                    <img src="images/men.jpg" />
+                    <img src="uploads/img_QC/img_ao.png" />
                 </section>
                 <section class="total-product">Tổng</section>
                 <section class="number-product">125 sản phẩm</section>

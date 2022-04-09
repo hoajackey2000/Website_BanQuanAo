@@ -13,11 +13,9 @@ and open the template in the editor.
         <script src="../resources/ckeditor/ckeditor.js"></script>
     </head>
     <body>
-        <?php
+        <?php        
+        include '../../config/connect_db.php';
         session_start();
-
-
-
         if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])) {
                 $result = mysqli_query($con, "Select `id`,`username`,`fullname`,`birthday` from `user` WHERE (`username` ='" . $_POST['username'] . "' AND `password` = md5('" . $_POST['password'] . "'))");
                 if (!$result) {
@@ -49,8 +47,10 @@ and open the template in the editor.
         include '../../function/function.php';
         $regexResult = checkPrivilege(); //Kiểm tra quyền thành viên
         if (!$regexResult) {
-            echo "Bạn không có quyền truy cập chức năng này";
+            echo "<h3>Bạn không có quyền truy cập chức năng này</h3> <br>"; 
+            echo " <h1><a href='index.php'> Click để về lại trang chủ</a></h1>";
             exit;
+            
         }
         
         if (!empty($_SESSION['current_user'])) { //Kiểm tra xem đã đăng nhập chưa?
@@ -64,6 +64,7 @@ and open the template in the editor.
                         <a href="../index.php">Trang chủ</a>
                         <img height="24" src="../images/logout.png">
                         <a href="logout.php">Ðăng Xuất</a>
+                        <img height="24" src="../images/icon_register.png">
                         <a href="register.php">Ðăng Ký</a>
                     </div>
 

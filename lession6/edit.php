@@ -38,7 +38,7 @@ and open the template in the editor.
                 <?php } else { ?>
                     <div id="edit-notify" class="box-content">
                         <h1><?= ($error !== false) ? $error : "Sửa tài khoản thành công" ?></h1>
-                        <a href="./login.php">Quay lại tài khoản</a>
+                        <a href="./index.php">Quay lại tài khoản</a>
                     </div>
                 <?php } ?>
             <?php } else { ?>
@@ -63,7 +63,7 @@ and open the template in the editor.
                         <input type="password" name="new_password" value="" /></br>
                         <br><br>
                         <input type="submit" value="Edit" />
-                        <a   href="./login.php">Quay lại</a>
+                        <a   href="./index.php">Quay lại</a>
                     </form>
                 </div>
                 <?php

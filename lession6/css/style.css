@@ -159,7 +159,6 @@ _#register-link {
     background: #FFF;
     border-radius: 12px;
     color: #ab9f8d;
-    z-index: 11
 }
 
 #product-search input[type=text] {
@@ -176,7 +175,7 @@ _#register-link {
 }
 
 #product-slide .wrap-slide {
-    width: 1200px;
+    width: 1100px;
     margin: 0 auto;
     position: relative;
 }
@@ -192,8 +191,9 @@ _#register-link {
 }
 
 #product-slide .wrap-slide .slide-right img {
-    max-width: 100%;
+    max-width: 80%;
     margin-left: 10%;
+    border-radius: 110px;
 }
 
 #product-slide .carouseller__list .car__12 {
@@ -206,7 +206,7 @@ _#register-link {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 10%;
+    bottom: 0;
     z-index: 0;
 }
 
@@ -225,8 +225,8 @@ _#register-link {
 }
 
 #product-slide .product-name {
-    margin-top: 130px;
-    margin-left: 30%;
+    margin-top: 50px;
+    margin-left: 40%;
 }
 
 #product-slide .product-name span {
@@ -247,7 +247,7 @@ _#register-link {
 .wrap-button {
     display: inline-block;
     margin-top: 15px;
-    margin-left: 15px;
+    margin-left: 150px;
 }
 
 .wrap-button section {

@@ -109,11 +109,8 @@
         if (!empty($_SESSION["cart"])) {
             $product = mysqli_query($con, "SELECT * FROM `product` WHERE `id` IN (" . implode(",", array_keys($_SESSION["cart"])) . ")");
         }
-//        $result = mysqli_query($con, "SELECT * FROM `product` WHERE `id` = ".$_GET['id']);
-//        $product = mysqli_fetch_assoc($result);
-//        $imgLibrary = mysqli_query($con, "SELECT * FROM `image_library` WHERE `product_id` = ".$_GET['id']);
-//        $product['images'] = mysqli_fetch_all($imgLibrary, MYSQLI_ASSOC);
-        ?>
+
+    ?>
         <div class="container_cart">
             <?php if (!empty($error)) { ?> 
                 <div id="notify-msg">

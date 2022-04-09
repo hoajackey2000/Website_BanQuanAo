@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-$config_name = "gallery";
 if (!empty($_SESSION['current_user'])) {
     ?>
     <div class="main-content">
@@ -122,18 +121,14 @@ if (!empty($_SESSION['current_user'])) {
                         <label>Thư viện ảnh: </label>
                         <div class="right-wrap-field">
                                 <?php if (!empty($product['gallery'])) { ?>
-
                                 <ul>
             <?php foreach ($product['gallery'] as $image) { ?>
                                         <li>
-
                                             <img src="../<?= $image['path'] ?>" />
-                                            <a href="gallery_delete.php?id=<?= $image['id'] ?>">Xóa</a>
+                                            <a href="gallery_delete?id=<?= $image['id'] ?>">Xóa</a>
                                         </li>
-
                                 <?php } ?>
                                 </ul>
-                                
                             <?php } ?>
                             <?php if (isset($_GET['task']) && !empty($product['gallery'])) { ?>
                                 <?php foreach ($product['gallery'] as $image) { ?>

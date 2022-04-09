@@ -33,7 +33,6 @@ function showGallery() {
 
 }
 
-
 // gán sự kiện icon
 images.forEach((item, index) => {
     item.addEventListener('click', function () {

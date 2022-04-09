@@ -2,7 +2,6 @@
     <section class="container">
         <section id="footer-logo">
             <img src="images/footer-logo.png" />
-            <!-- <img src="images/logo.gif" />  -->
         </section>
         <section id="footer-link">
             <ul>

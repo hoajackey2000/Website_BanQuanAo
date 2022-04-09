@@ -36,7 +36,7 @@
                     }
                 }
                 $_SESSION['current_user'] = $user;
-                header('Location: dashboard.php');
+                header('Location: product_listing.php');
             }
             mysqli_close($con);
 
