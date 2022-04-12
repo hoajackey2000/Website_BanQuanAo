@@ -9,7 +9,7 @@ and open the template in the editor.
         <title>Đổi thông tin thành viên</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="../style.css">
+      <link rel="stylesheet" href="../css/login_register.css">
     </head>
     <body>
         <?php
@@ -54,13 +54,21 @@ and open the template in the editor.
             if (!empty($user)) {
                 ?>
                 <div id="edit_user" class="box-content">
-                    <h1>Xin chào "<?= $user['fullname'] ?>". Bạn đang thay đổi mật khẩu</h1>
+                    <h1>Xin chào "<span><?= $user['fullname'] ?></span>". Bạn đang thay đổi mật khẩu</h1>
                     <form action="./edit.php?action=edit" method="Post" autocomplete="off">
                         <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
-                        <label>Password cũ</label></br>
-                        <input type="password" name="old_password" value="" /></br>
-                        <label>Password mới</label></br>
-                        <input type="password" name="new_password" value="" /></br>
+                        <div class="form-control">
+                            <input type="password" name="old_password" value="" placeholder="Nhập Password cũ">
+                            <span></span>
+                            <small></small>
+                        </div>
+                        <div class="form-control">
+                            <input type="password" name="new_password" value="" placeholder="Nhập Password mới">
+                            <span></span>
+                            <small></small>
+                        </div>
+
+
                         <br><br>
                         <input type="submit" value="Edit" />
                         <a   href="./index.php">Quay lại</a>

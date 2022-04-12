@@ -34,66 +34,7 @@
     $totalRecords = $totalRecords->num_rows;
     $totalPages = ceil($totalRecords / $item_per_page);
     ?>
-<!-- <section id="product-filter">
-    <section class="container">
-        <label>Filter</label>
-        <section id="brand-filter" class="filter-column">
-            <h2>Brands</h2>
-            <section id="brand-list">
-                <ul>
-                    <li><a href="#">Adidas</a></li>
-                    <li><a href="#">Nike</a></li>
-                    <li><a href="#">Camper</a></li>
-                    <li><a href="#">Superga</a></li>
-                    <li><a href="#">Tımberland</a></li>
-                    <li><a href="#">New balance</a></li>
-                    <li><a href="#">Converse</a></li>
-                    <li><a href="#">Puma</a></li>
-                    <li><a href="#">Tiger</a></li>
-                    <li><a href="#">Lacoste</a></li>
-                    <li><a href="#">Reebok</a></li>
-                    <li><a href="#">Cat</a></li>
-                    <li><a href="#">Dockers</a></li>
-                    <li class="clear-both"></li>
-                </ul>
-            </section>
-        </section>
-        <section id="category-statistic" class="filter-column">
-            <section class="category">
-                <h3>Nữ</h3>
-                <section class="category-image">
-                    <img src="images/woman.jpg" />
-                </section>
-                <section class="total-product">Tổng</section>
-                <section class="number-product">357 sản phẩm</section>
-                <img src="images/product-list-icon.png" />
-            </section>
-            <section class="category center-block">
-                <h3>Nam</h3>
-                <section class="category-image">
-                    <img src="images/men.jpg" />
-                </section>
-                <section class="total-product">Tổng</section>
-                <section class="number-product">125 sản phẩm</section>
-                <img src="images/product-list-icon.png" />
-            </section>
-            <section class="category">
-                <h3>Trẻ em</h3>
-                <section class="category-image">
-                    <img src="images/kids.jpg" />
-                </section>
-                <section class="total-product">Tổng</section>
-                <section class="number-product">251 sản phẩm</section>
-                <img src="images/product-list-icon.png" />
-            </section>
-            <section class="clear-both"></section>
-        </section>
-        <section id="property-filter" class="filter-column">
-            <img src="images/property-filter.jpg" />
-        </section>
-        <section class="clear-both"></section>
-    </section>
-</section> -->
+
 <section id="hot-products">
     <section class="container">
         <section class="heading-title">
@@ -119,12 +60,7 @@
                     <section class="left-buy-button"></section>
                     <!-- <section class="content-buy-button"> -->
 
-                    <?php
-                    if (!empty($_SESSION['current_user'])) { //Kiểm tra xem đã đăng nhập chưa?
-                    ?> 
-                        <?php if (!empty($_SESSION['current_user'])) {
-                            $currentUser = $_SESSION['current_user'];
-                            ?>
+                    
 
                         <section class="content-buy-button">
                             <?php if ($row['quantity'] > 0) { ?>
@@ -137,23 +73,6 @@
                                 <a href="#">Hết hàng</a>
                             <?php } ?>
                         </section>
-
-                        <?php } ?>
-                    <?php }else { ?>
-                        <section class="content-buy-button">
-                            <?php if ($row['quantity'] > 0) { ?>
-                                <section class="product-price"><?= number_format($row['price'], 0, ",", ".") ?> đ</section>
-                                <form class="quick-buy-form" action="login.php" >
-                                    <input type="submit" value="Mua ngay" />
-                                </form>
-                            <?php } else { ?>
-                                <a href="#">Hết hàng</a>
-                            <?php } ?>
-                            </section>
-                    <?php } ?>
-
-
-
 
                     <!-- </section> -->
                     <section class="right-buy-button"></section>

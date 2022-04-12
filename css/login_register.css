@@ -64,6 +64,22 @@ form .form-control {
     color: #666666;
 }
 
+
+#edit_user {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgb(0 0 0 / 5%);
+}
+
+span {
+    color: red;
+}
+
 #edit-notify,
 #user_register,
 #user_login,

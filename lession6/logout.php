@@ -9,7 +9,7 @@ and open the template in the editor.
         <title>Đăng xuất tài khoản</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../login_register.css">
+        <link rel="stylesheet" href="../css/login_register.css">
     </head>
     <body>
         <?php
